@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title >
+        Live
+      </ion-title>
+    
+
+    
+
+            <ion-buttons end>
+                  <button ion-button left icon-only (click)="getLiveCountry()">
+                     <ion-icon  name="md-refresh" ></ion-icon> 
+                  </button>
+           </ion-buttons>
+
+           
+
+          
+
+  </ion-navbar>
+</ion-header>
+
+    <ion-content padding>
+<!---
+col-3 col-md-4 col-xl-3
+--->
+
+<ion-grid >
+  <ion-row>
+    <ion-col  col-3 col-md-2 col-xl-2 *ngFor="let c of countries">
+      
+      <img src="{{c.url_logo}}" class="img" (click)="push_data_country(c.categorie,c.title)">
+
+     
+      
+      <strong>          
+        <p  style="font-weight:bold; text-align: center ; width:100%; font-size: 16px; color:rgb(0, 0, 0);">
+          {{c.title}}</p>
+      </strong>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+        
+      <!---  
+      
+--->
+         
+          <ion-infinite-scroll threshold="100px" (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+          
+
+</ion-content>

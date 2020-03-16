@@ -1,0 +1,51 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        <img src="assets/icon/appmofix.png" width="140px" style="display:inline-block" height="40px"/>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+
+  <ion-content >
+
+      
+    
+      <ion-list no-lines   class="sidemenugrad rtl">
+
+
+        <button menuClose ion-item *ngFor="let p of pages" class="listcolor"  (click)="openPage(p)">
+            <strong class="fontcolor"> 
+                <ion-icon name="{{p.icon}}"></ion-icon>
+              {{p.title}}</strong>
+        </button>
+   
+
+      <button  menuClose ion-item  class="listcolor"  (click)="rateApp()">
+        <strong class="fontcolor"><ion-icon name="star" ></ion-icon>
+          Support us</strong>
+       
+        
+
+      </button>
+
+
+      <button lines  menuClose ion-item  class="listcolor"  (click)="shareApp()">
+        <strong class="fontcolor"> <ion-icon name="share" ></ion-icon>
+        Share</strong>
+      </button>
+
+
+
+    </ion-list>
+  </ion-content>
+
+  
+
+</ion-menu>
+
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,74 @@
+page-profil-en {
+    .card{
+        box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.3);
+        background-color: rgb(252, 244, 244);
+      }
+      .card-web-site{
+        background-color: #fe601a;
+      
+      }
+      
+      .card2{
+        background-color: #fff;
+      }
+      
+      ion-input { background:  #fe601a !important; }
+      
+      
+      .text-card {
+        color: #000000;
+        }
+        .h-color-text{
+          color: #eb2f06; 
+        }
+      
+        /*--------------------------------*/
+        p {
+          font-size: 1.8rem;
+        }
+      
+        .app-icon-container {
+          padding-top: 44px;
+          padding-bottom: 44px;
+      
+        }
+      
+        .app-icon-zoom {
+          zoom: 4.0;
+        }
+      
+        .sign-in-button-container {
+          padding-top: 40px;
+        }
+      
+        .validator-error {
+          color: color($colors, danger);
+          padding-top: 8px;
+          padding-left: 16px;
+        }
+      
+        .fab-container {
+          position: relative;
+        }
+      
+        .listcolor{
+          background-color: #fff ;
+      }
+      .text-input {
+        color: rgb(8, 8, 8);
+      
+      }
+      .card-header{
+        color: #eb2f06;
+      }
+      
+      
+      .btn {
+        border-radius: 50%;
+      
+        
+      }
+      .text-label{
+        color: #141f20;
+      }
+}

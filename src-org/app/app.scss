@@ -1,0 +1,86 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+ion-content {
+    background-color: #fff  !important;
+    font-family:'Raleway';
+}
+ion-title{
+
+    text-align: center;
+ 
+   }
+.listcolor{
+    background-color: rgb(2, 2, 2) ;
+}
+.fontcolor{
+    color:#fff
+   ////  color:rgb(250, 32, 3);
+}
+.color_refresh{
+    background-color: #16a085;
+    
+    ////  color:rgb(250, 32, 3);
+ }
+ .font_refresh_color{
+    color:#2a5298
+ }
+
+
+
+ .sidemenugrad {
+    background-color: #2c2d2d;
+    .menu-items {
+        .item>ion-icon, .item-inner>ion-icon {
+            font-size: 1.8rem;
+        }
+        .item {
+            ion-icon {
+                color: white;
+                background-color: orange;
+                padding: 5px;
+                border-radius: 4px;
+                line-height: 0;
+            }
+        }
+    }
+    .item {
+        background-color: transparent;
+        color: #fff;
+    } 
+}
+
+body.video-play {
+	background-color: transparent !important;
+
+	ion-app {
+		background-color: transparent !important;
+
+		.app-root {
+			opacity: 0;
+		}
+
+		.ion-page.show-page ~ .nav-decor {
+			background-color: transparent !important;
+		}
+		.content {
+			background-color: transparent !important;
+		}
+	}
+}

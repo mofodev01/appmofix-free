@@ -1,0 +1,78 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title *ngIf="!issearchbaroponed">
+      3D Movies
+      </ion-title>
+     <ion-searchbar  *ngIf="issearchbaroponed"  class="search-box" color="danger" [(ngModel)]="terms"      showCancelButton=true (ionCancel)="issearchbaroponed=false" ></ion-searchbar>
+
+     <ion-buttons end>
+      <button ion-button left icon-only *ngIf="!issearchbaroponed" (click)="issearchbaroponed=true">
+         <ion-icon  name="search" ></ion-icon> 
+      </button>
+    </ion-buttons>
+
+            <ion-buttons end>
+                  <button ion-button left icon-only (click)="get_VodGaming()">
+                     <ion-icon  name="md-refresh" ></ion-icon> 
+                  </button>
+           </ion-buttons>
+
+           <ion-buttons end>
+            <button ion-button left icon-only (click)="sort()">
+              <ion-icon name="funnel"></ion-icon> 
+            </button>
+          </ion-buttons>
+
+          
+
+  </ion-navbar>
+</ion-header>
+
+    <ion-content padding>
+
+
+        <ion-grid >
+            <ion-row>
+              <ion-col class="showbox" col-3 col-md-2 col-xl-2 *ngFor="let c of countries | slice:0:limit | search : terms | sort: {property: column, order: order}">
+                 <!-- src-fallback="{{ placeholder }}"-->
+                <img src="{{c.tvlogo}}" onerror="this.src='assets/imgs/icon.png'" class="img" >
+          
+                 
+                                  
+                    <div class="middle">
+                
+                        <div> 
+                           <ion-icon class="iconplay"   (click)="startVideo(c.tvmedia)"  name="play"></ion-icon>
+                        </div>
+
+                        <div> 
+                           <ion-icon class="iconfav" (click)="CreateUser(c.id, c.tvtitle, c.tvmedia,c.tvname,c.tvlogo,c.tvgroup)"  name="heart"></ion-icon>
+                        </div>
+
+                    </div>
+               
+                    <strong>          
+                      <p  style="font-weight:bold; text-align: center ; width:100%; font-size: 16px; color:rgb(0, 0, 0);">
+                        {{c.tvname}}</p>
+                    </strong>     
+                 
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+         
+          <ion-infinite-scroll threshold="100px" (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+          
+
+  </ion-content>
+  

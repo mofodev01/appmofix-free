@@ -1,0 +1,9 @@
+{
+  "name": "appmofix",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "f4fa89d9",
+  "id": "f6899fe7"
+}

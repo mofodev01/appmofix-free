@@ -1,0 +1,9 @@
+<div *ngIf="playerHeight">
+	<div class="player" (click)="showConfirm()" [ngStyle]="{'height.px':playerHeight}">
+	
+	</div>
+
+	<div class="chat" *ngIf="playMode==1" [ngStyle]="{'top.px':playerHeight}">
+		
+	</div>
+</div>

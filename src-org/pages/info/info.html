@@ -1,0 +1,31 @@
+
+
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list *ngFor="let item of items">
+ 
+  <ion-card-content >
+    <ion-card-title  class="text-card" text-center >
+        <strong> {{item.title}}</strong>
+    </ion-card-title>
+ 
+  <p class="text-card">{{item.message}}</p>
+
+  
+</ion-card-content>
+</ion-list>
+</ion-content>
+
+

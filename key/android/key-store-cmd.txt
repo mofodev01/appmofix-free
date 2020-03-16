@@ -1,0 +1,31 @@
+C:\Users\kazbi>cd C:\Users\kazbi\appmofix\key\android
+
+C:\Users\kazbi\appmofix\key\android>keytool -genkey -v -keystore MY-APPMOFIX-KEY.keystore -alias MY_ALIAS_APPMOFIX -keyalg RSA -keysize 2048 -validity 10000
+Entrez le mot de passe du fichier de clés : appmofix
+Ressaisissez le nouveau mot de passe : appmofix
+Quels sont vos nom et prénom ?
+  [Unknown]:  mustapha kazbir
+Quel est le nom de votre unité organisationnelle ?
+  [Unknown]:
+Quel est le nom de votre entreprise ?
+  [Unknown]:
+Quel est le nom de votre ville de résidence ?
+  [Unknown]:  taroudant
+Quel est le nom de votre état ou province ?
+  [Unknown]:  souss masa
+Quel est le code pays à deux lettres pour cette unité ?
+  [Unknown]:  83000
+Est-ce CN=mustapha kazbir, OU=Unknown, O=Unknown, L=taroudant, ST=souss masa, C=83000 ?
+  [non]:  oui
+
+Génération d'une paire de clés RSA de 2 048 bits et d'un certificat auto-signé (SHA256withRSA) d'une validité de 10 000 jours
+        pour : CN=mustapha kazbir, OU=Unknown, O=Unknown, L=taroudant, ST=souss masa, C=83000
+Entrez le mot de passe de la clé pour <MY_ALIAS_APPMOFIX>
+        (appuyez sur Entrée s'il s'agit du mot de passe du fichier de clés) : appmofix
+Ressaisissez le nouveau mot de passe : appmofix
+[Stockage de MY-APPMOFIX-KEY.keystore]
+
+Warning:
+Le fichier de clés JKS utilise un format propriétaire. Il est recommandé de migrer vers PKCS12, qui est un format standard de l'industrie en utilisant "keytool -importkeystore -srckeystore MY-APPMOFIX-KEY.keystore -destkeystore MY-APPMOFIX-KEY.keystore -deststoretype pkcs12".
+
+C:\Users\kazbi\appmofix\key\android>

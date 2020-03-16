@@ -1,0 +1,500 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title >
+      Download
+      </ion-title>
+    
+        
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="index">
+
+      <ion-segment-button value="lines">
+        Lines
+       </ion-segment-button>
+
+      <ion-segment-button value="portal" >
+        Portal
+      </ion-segment-button>
+      <ion-segment-button value="portalmag">
+        Portal Mag
+      </ion-segment-button>
+      
+
+      <ion-segment-button value="webstream">
+       Web Stream
+      </ion-segment-button>
+
+</ion-segment>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="index">
+    <ion-list *ngSwitchCase="'portal'">
+        <ion-card  class="card">
+            <ion-card-header class="card-header">
+                Portal
+            </ion-card-header>
+            <ion-card-content class="text-card">
+              
+                <ion-item class="card" *ngFor="let item of items">
+             
+                    <ion-row class="text-card">
+                          <ion-col >
+                              Portal    :
+                          </ion-col>
+                          <ion-col >
+                            {{item.host}}
+                          </ion-col> 
+                         
+                      </ion-row>
+          
+                      <ion-row class="text-card">
+                          <ion-col >
+                              Username   :
+                          </ion-col>
+                          <ion-col >
+                            {{item.server_name}}
+                          </ion-col> 
+                         
+                      </ion-row>
+          
+                      <ion-row class="text-card">
+                          <ion-col >
+                              Password   :
+                          </ion-col>
+                          <ion-col >
+                            {{item.server_pass}}
+                          </ion-col> 
+                         
+                      </ion-row>
+                     
+                     
+                        </ion-item>
+
+            </ion-card-content>
+          </ion-card>
+
+
+
+
+         
+
+
+
+
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'portalmag'">
+        <ion-card  class="card">
+            <ion-card-header class="card-header">
+                Portal Mag
+            </ion-card-header>
+            <ion-card-content class="text-card">
+      
+                <ion-item class="card" *ngFor="let item of items">
+             
+                    <ion-row class="text-card">
+                          <ion-col >
+                              Portal Mag  Device :
+                          </ion-col>
+                          <ion-col >
+                            {{item.host}}/c/
+                          </ion-col> 
+                         
+                      </ion-row>
+          
+                        </ion-item>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'lines'">
+
+
+       
+ 
+       
+      
+          <!-----------------------M3U----------------------->
+
+           <ion-card  class="card">
+            <ion-card-header class="card-header">
+                M3U
+            </ion-card-header>
+            <ion-card-content class="text-card" *ngFor="let item of items">
+                <h3 class="h-color-text"> <strong  style="color: #079992;">For: KODI, smart tv, VLC, tsmedia, android box,</strong></h3>
+                <h3 class="h-color-text"> <strong  style="color: #079992;">webtv(spark),computer, phone via media players ...etc</strong></h3>
+                
+                <ion-textarea type="text" color="dark"  [(ngModel)]="CopyTextAreaM3U"  value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=m3u_plus&output=ts"></ion-textarea>
+
+                <ion-row class="text-card">
+                        <ion-col >
+    
+              <button ion-button block round color="primary"  (click)="copyTextM3U()" >      
+                copy
+              </button>
+    
+                     </ion-col>       
+                      </ion-row>
+            </ion-card-content>
+          </ion-card>
+
+          <!-----------------M3U8----------------------------->
+         <ion-card  class="card">
+              <ion-card-header class="card-header">
+                  M3U8
+              </ion-card-header>
+              <ion-card-content class="text-card" *ngFor="let item of items">
+                
+                  <ion-textarea type="text" color="dark" [(ngModel)]="CopyTextAreaM3U8"  value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=m3u_plus&output=m3u8"></ion-textarea>
+
+                  <ion-row class="text-card">
+                        <ion-col >
+    
+              <button ion-button block round color="primary"  (click)="copyTextM3U8()" >      
+                copy
+              </button>
+    
+                     </ion-col>       
+                      </ion-row>
+
+              </ion-card-content>
+            </ion-card>
+
+            
+        <!-------------------Enigma 2 OE--------------------------->
+          
+           <ion-card  class="card">
+                <ion-card-header class="card-header">
+                    Enigma 2 OE
+                </ion-card-header>
+                <ion-card-content class="text-card" *ngFor="let item of items">
+                <h3 class="h-color-text"> <strong  style="color: #079992;">To: install using the ssh command</strong></h3>
+                    <ion-textarea type="text" color="dark" [(ngModel)]="CopyTextAreaEnigma"  value='wget -O /etc/enigma2/iptv.sh "{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=enigma22_script&output=ts" && chmod 777 /etc/enigma2/iptv.sh && /etc/enigma2/iptv.sh'></ion-textarea>
+
+                    <ion-row class="text-card">
+                            <ion-col >
+        
+                  <button ion-button block round color="primary"  (click)="copyTextEnigma()" >      
+                    copy
+                  </button>
+        
+                         </ion-col>       
+                          </ion-row>
+  
+                </ion-card-content>
+            </ion-card>
+
+           
+         <!---------------------Spark------------------------->
+         <ion-card  class="card">
+                <ion-card-header class="card-header">
+                    Spark
+                </ion-card-header>
+                <ion-card-content class="text-card" *ngFor="let item of items">
+                <h3 class="h-color-text"> <strong  style="color: #079992;">For: truman, golden media, and all devices with spark system</strong></h3>
+                <ion-textarea type="text" color="dark" [(ngModel)]="CopyTextAreaSpark" value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=spark&output=ts"></ion-textarea>
+
+                <ion-row class="text-card">
+                        <ion-col >
+    
+              <button ion-button block round color="primary"  (click)="copyTextSpark()" >      
+                copy
+              </button>
+    
+                     </ion-col>       
+                      </ion-row>
+  
+                </ion-card-content>
+            </ion-card>
+
+         <!--------------------CFG type-------------------------->
+         <ion-card  class="card">
+            <ion-card-header class="card-header">
+                type CFG 
+            </ion-card-header>
+            <ion-card-content class="text-card" *ngFor="let item of items">
+            <h3 class="h-color-text"> <strong  style="color: #079992;">For: Giant, starsat, tiger and all devices accept the CFG file type</strong></h3>
+
+            <ion-textarea type="text" color="dark" [(ngModel)]="CopyTextAreaCFG" value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=gst&output=ts"></ion-textarea>
+
+            <ion-row class="text-card">
+                    <ion-col >
+
+          <button ion-button block round color="primary"  (click)="copyTextCFG()" >      
+            copy
+          </button>
+
+                 </ion-col>       
+                  </ion-row>
+
+            </ion-card-content>
+        </ion-card>
+
+         <!--------------------Simple List-------------------------->
+           <ion-card  class="card">
+            <ion-card-header class="card-header">
+              Simple List (TXT)
+            </ion-card-header>
+            <ion-card-content class="text-card" *ngFor="let item of items">
+
+                    
+           
+            <ion-textarea [(ngModel)]="CopyTextAreaSimpleList" type="text" color="dark"  value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=simple&output=ts"></ion-textarea>
+
+            <ion-row class="text-card">
+                    <ion-col >
+
+          <button ion-button block round color="primary"  (click)="copyTextSimpleList()" >      
+            copy
+          </button>
+
+                 </ion-col>       
+                  </ion-row>
+
+            </ion-card-content>
+        </ion-card>
+
+
+          <!------------------WebTV List---------------------------->
+          <ion-card  class="card">
+              <ion-card-header class="card-header">
+                WebTV list 
+              </ion-card-header>
+              <ion-card-content class="text-card" *ngFor="let item of items">
+             
+                    
+
+                  <ion-textarea color="dark" [(ngModel)]="CopyTextAreaWebTV" type="text" value="{{item.host}}/get.php?username={{item.server_name}}&password={{item.server_pass}}&type=webtvlist&output=ts"></ion-textarea>
+
+                  <ion-row class="text-card">
+                        <ion-col > 
+
+                  <button ion-button block round color="primary"  (click)="copyTextWebTV()" >      
+                    copy
+                  </button>
+
+                </ion-col>       
+            </ion-row>
+  
+              </ion-card-content>
+          </ion-card>
+
+         
+          <!------------------EPG Link---------------------------->
+           <ion-card  class="card">
+              <ion-card-header class="card-header">
+                EPG link 
+              </ion-card-header>
+              <ion-card-content class="text-card" *ngFor="let item of items">
+
+                
+
+                  <ion-textarea color="dark" [(ngModel)]="CopyTextAreaEPG" type="text"  value="{{item.host}}/xmltv.php?username={{item.server_name}}&password={{item.server_pass}}"></ion-textarea>
+
+                  <ion-row class="text-card">
+                        <ion-col > 
+
+                  <button ion-button block round color="primary"  (click)="copyTextEPG()" >      
+                    copy
+                  </button>
+
+                </ion-col>       
+            </ion-row>
+
+              </ion-card-content>
+          </ion-card>
+          <!---------------------------------------------->
+
+           <!------------------Android mobile app---------------------------->
+           <ion-card  class="card">
+            <ion-card-header class="card-header">
+                Android mobile app
+            </ion-card-header>
+            <ion-card-content class="text-card" *ngFor="let item of items">
+           
+                <ion-item class="card" *ngFor="let item of items">
+             
+                    <ion-row class="text-card">
+                        <ion-col >
+                            Username   :
+                        </ion-col>
+                        <ion-col >
+                          {{item.server_name}}
+                        </ion-col> 
+                       
+                    </ion-row>
+                    <ion-row class="text-card">
+                        <ion-col >
+                            Password   :
+                        </ion-col>
+                        <ion-col >
+                          {{item.server_pass}}
+                        </ion-col> 
+                       
+                    </ion-row>
+                    <ion-row class="text-card">
+
+                        <ion-col >
+                            <button ion-button block round color="primary"  (click)="openApp()" >      
+                              Download
+                              </button>
+                        </ion-col> 
+                       
+                    </ion-row>
+          
+                        </ion-item>
+
+            </ion-card-content>
+        </ion-card>
+        <!---------------------------------------------->
+
+        <!------------------For Android boxes---------------------------->
+        <ion-card  class="card">
+                <ion-card-header class="card-header">
+                  For Android boxes
+                </ion-card-header>
+                <ion-card-content class="text-card" *ngFor="let item of items">
+               
+                    <ion-item class="card" *ngFor="let item of items">
+                 
+                        <ion-row class="text-card">
+                            <ion-col >
+                                Username   :
+                            </ion-col>
+                            <ion-col >
+                              {{item.server_name}}
+                            </ion-col> 
+                           
+                        </ion-row>
+                        <ion-row class="text-card">
+                            <ion-col >
+                                Password   :
+                            </ion-col>
+                            <ion-col >
+                              {{item.server_pass}}
+                            </ion-col> 
+                           
+                        </ion-row>
+                        <ion-row class="text-card">
+                            
+                            <ion-col >
+                                <button ion-button block round color="primary"  (click)="download_apk()" >      
+                                  Download
+                                  </button>
+                            </ion-col> 
+                           
+                        </ion-row>
+              
+                            </ion-item>
+    
+                </ion-card-content>
+            </ion-card>
+            <!---------------------------------------------->
+             <!------------------Plugin for Kodi---------------------------->
+        <ion-card  class="card">
+                <ion-card-header class="card-header">
+                  Plugin For Kodi
+                </ion-card-header>
+                <ion-card-content class="text-card" *ngFor="let item of items">
+               
+                    <ion-item class="card" *ngFor="let item of items">
+                 
+                        <ion-row class="text-card">
+                            
+                            <ion-col >
+                            <button ion-button block round color="primary"  (click)="download_plugin_kodi()" >      
+                              Download
+                                  </button>
+                            </ion-col> 
+                           
+                        </ion-row>
+              
+                            </ion-item>
+    
+                </ion-card-content>
+            </ion-card>
+            <!---------------------------------------------->
+      
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'webstream'">
+        <ion-card  class="card">
+            <ion-card-header class="card-header">
+                Web Stream 
+            </ion-card-header>
+            <ion-card-content class="text-card">
+              
+                <ion-item class="card" *ngFor="let item of items">
+             
+             
+          
+                      <ion-row class="text-card">
+                          <ion-col >
+                              Username   :
+                          </ion-col>
+                          <ion-col >
+                            {{item.server_name}}
+                          </ion-col> 
+                         
+                      </ion-row>
+          
+                      <ion-row class="text-card">
+                          <ion-col >
+                              Password   :
+                          </ion-col>
+                          <ion-col >
+                            {{item.server_pass}}
+                          </ion-col> 
+                         
+                      </ion-row>
+                     
+                     
+                        </ion-item>
+
+                        
+
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card  class="card">
+                <ion-card-header class="card-header">
+
+                <button ion-button block round color="primary"  (click)="copyTextWebStream()" >      
+                  copy
+                </button>
+
+                </ion-card-header>
+                <ion-card-content class="text-card">
+                  
+                    <ion-item class="card">
+                 
+                             <ion-textarea color="dark" [(ngModel)]="CopyTextAreaWebStream" type="text"  value="http://iptv-line.com:6969/webplayer"></ion-textarea>
+    
+                                
+                            
+                                    
+                           
+                                    
+    
+                         
+                            </ion-item>
+    
+                            
+    
+                </ion-card-content>
+              </ion-card>
+          
+      </ion-list>
+  </div>
+</ion-content>

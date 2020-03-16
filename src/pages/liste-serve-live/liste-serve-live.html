@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title >
+        Liste Server
+      </ion-title>
+    
+
+    
+
+            <ion-buttons end>
+                  <button ion-button left icon-only (click)="getLiveserver()">
+                     <ion-icon  name="md-refresh" ></ion-icon> 
+                  </button>
+           </ion-buttons>
+
+           
+
+          
+
+  </ion-navbar>
+</ion-header>
+
+    <ion-content padding>
+<!---
+
+--->
+
+
+<ion-list no-lines>
+  <ion-item *ngFor="let c of countries" class="listcolor">
+    <ion-avatar item-start >
+      <img src="assets/imgs/server.png">
+    </ion-avatar>
+    <h2 class="fontcolor"><strong>{{c.name}}</strong></h2>
+    <h3 class="fontcolor">This server is limited</h3>
+    <h4 class="fontcolor">Please use premium app</h4>
+    <button ion-button clear item-end color="dark" (click)="push_data_country_and_server(c.id)">View</button>
+  </ion-item>
+</ion-list>
+        
+      <!---  
+      
+--->
+         
+         
+          
+
+</ion-content>

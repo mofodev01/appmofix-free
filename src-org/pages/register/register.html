@@ -1,0 +1,91 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form >
+
+      <ion-item  class="listcolor" [hidden]="true">
+          <ion-label floating>
+            uuid
+          </ion-label>
+         
+          <ion-input type="text"  value="{{id}}{{serial}}" class="text-input" name="uuid" #uuid></ion-input>
+     </ion-item>
+
+      <ion-item  class="listcolor" [hidden]="true">
+          <ion-label floating>
+            Device
+          </ion-label>
+         
+          <ion-input type="text"  value="{{platform}}:{{version}}/Model:{{model}}" class="text-input" name="device" #device></ion-input>
+     </ion-item>
+
+      <ion-item  class="listcolor" [hidden]="true">
+          <ion-label floating>
+            Geolocalisation
+          </ion-label>
+         
+          <ion-input type="text"  value="{{responseObj.address}}" class="text-input" name="geolocal" #geolocal></ion-input>
+     </ion-item>
+
+      <ion-item  class="listcolor">
+          <ion-label floating>
+            Username
+          </ion-label>
+          <ion-input type="text" class="text-input" name="fullname" #username></ion-input>
+     </ion-item>
+
+     <ion-item  class="listcolor">
+        <ion-label floating>
+            Email
+        </ion-label>
+        <ion-input type="email" class="text-input" name="email" #email></ion-input>
+   </ion-item>
+
+   <ion-item  class="listcolor">
+      <ion-label floating>
+          Phone
+      </ion-label>
+      <ion-input type="number" class="text-input" name="mobile" #mobile></ion-input>
+ </ion-item>
+
+ <ion-item  class="listcolor">
+    <ion-label floating>
+        Password
+    </ion-label>
+    <ion-input type="password" class="text-input" name="password" #password></ion-input>
+</ion-item>
+
+<ion-item  class="listcolor">   
+<ion-label floating>
+   Confirm Password 
+</ion-label>
+<ion-input type="password" class="text-input"  name="confirm_password" #confirm_password></ion-input>
+</ion-item>
+
+<ion-item  class="listcolor" [hidden]="true">
+  <ion-label floating>
+   app name
+  </ion-label>
+ 
+  <ion-input type="text"  value="appmofix" class="text-input" name="app_name" #app_name></ion-input>
+</ion-item>
+
+
+  <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block round color="green-sea" (click)="Register()">      
+          Register
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+  </ion-content>
+

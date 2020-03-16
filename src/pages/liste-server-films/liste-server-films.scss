@@ -1,0 +1,55 @@
+page-liste-server-films {
+  .card{
+    background-color: #fe601a;
+}
+
+.card2{
+    background-color: #fe601a;
+}
+
+
+
+.text-card {
+    color: #0000;
+  }
+  .h-color-text{
+    color: #0000;  
+  }
+
+  /*--------------------------------*/
+  p {
+    font-size: 1.8rem;
+  }
+
+  .app-icon-container {
+    padding-top: 44px;
+    padding-bottom: 44px;
+
+  }
+
+  .app-icon-zoom {
+    zoom: 4.0;
+  }
+
+  .sign-in-button-container {
+    padding-top: 40px;
+  }
+
+  .validator-error {
+    color: color($colors, danger);
+    padding-top: 8px;
+    padding-left: 16px;
+  }
+
+  .fab-container {
+    position: relative;
+  }
+
+  .listcolor{
+    background-color: #fe601a; 
+}
+.text-input {
+  color: #0000;
+}
+  
+}

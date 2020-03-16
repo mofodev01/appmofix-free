@@ -1,0 +1,1059 @@
+
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>Tutoriels</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content>
+
+       
+      
+            <ion-toolbar no-border-top>
+                <ion-segment [(ngModel)]="index">
+            
+                  <ion-segment-button value="home" >
+                    French
+                  </ion-segment-button>
+                  <ion-segment-button value="whatisiptv">
+                    English
+                  </ion-segment-button>
+                 
+                  
+            </ion-segment>
+            </ion-toolbar>
+
+            <div [ngSwitch]="index">
+  
+                    <ion-list *ngSwitchCase="'home'">
+
+
+   <!------------------Tutorial use IPTV VLC---------------------------->
+   <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Tutorial d'utiliser IPTV sur VLC
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+          <p class="text-card">
+            VLC est un excellent programme, pour regarder la télévision en direct depuis votre PC et votre smartphone . Vous simplement besoin d'une liste de canaux au format M3U pour l'exécuter avec ce logiciel.</p>
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_tuto_vlc()" >      
+                              Video
+                            </button>
+                      </ion-col> 
+                     
+              </ion-row>
+    
+                 
+
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+
+
+  <!------------------How to install IPTV channels for android IPTV?---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+            Iptv sur Android 
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+                       
+          <p class="text-card">
+            Beaucoup d'applications pour utiliser IPTV sur Android smartphone mais nous recommandons juste le meilleure application IPTV pour Android IPTV 1. IPTV APP 2. Perfect Player IPTV 3. IPTV PREMIUM</p>
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_android_IPTV()" >      
+                              Video
+                            </button>
+                      </ion-col> 
+                     
+              </ion-row>
+    
+                  
+
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+
+
+   <!------------------How to set up Smart IPTV on Smart tv?---------------------------->
+   <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Utiliser Iptv sur Smart Tv
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+                        
+                       
+          <p class="text-card">
+            Ce tutoriel est fait à partir d'un LG Smart TV, mais devrait être le même procédure que sur un Samsung Tv. 1.Installer l'application Smart IPTV sur Smart TV Installation depuis le LG Store Application 2.Start 3.Configurer l'application Pour utiliser vos flux, vous devriez visiter cette page:<br> http://siptv.eu/mylist/ and https://siptv.app/news/
+          </p>
+          
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Smart_tv()" >      
+                              Video
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+
+   <!------------------GSE IPTV for IOS and Apple TV---------------------------->
+   <ion-card  class="card">
+      <ion-card-header class="card-header">
+          GSE IPTV Pour IOS and Apple TV
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+          
+                       
+          <p class="text-card">
+            Ce tutoriel vous guidera à travers la configuration GSE IPTV pour un iPad Apple, Apple iPhone ou IPTV Apple TV.ils sont disponibles dans l'App Store, cependant, ce tutoriel est basé sur une application gratuite appelée «GSE IPTV», cette application est gratuite à télécharger et à utiliser. lien :<br> https://itunes.apple.com/us/app/ gse-smart-iptv/id1028734023?mt=8
+          </p>
+          
+          
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Apple_TV()" >      
+                              Video
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+
+              <ion-row class="text-card">
+                  <ion-col >
+                      <p class="text-card"> Installation Kodi sur IPTV Apple TV 4</p>
+                  </ion-col>
+
+                </ion-row>
+
+                <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_kodi_Apple_TV()" >      
+                              Video
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+
+              <ion-row class="text-card">
+                  <ion-col >
+                      <p class="text-card"> commet utiliser IPTV Avec KODI ?</p>
+                  </ion-col>
+
+                </ion-row>
+
+                <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_IPTV_with_KODI()" >      
+                              Video
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+ <!------------------Setup IPTV for Android STB Emulator---------------------------->
+ <ion-card  class="card">
+    <ion-card-header class="card-header">
+        Setup IPTV pur Android STB Emulator
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+                    
+                      
+                     
+       <p class="text-card">
+
+        1. Téléchargez StbEmu (gratuit) du Google Play Store sur votre appareil Android.<br> 2. Chargez Stb Emulator et vous verrez cet écran<br> 3. Appuyez près du coin supérieur droit, puis cliquez sur Paramètres - la 4ème icône à partir de la droite.<br> 4. Appuyez sur Profils<br> 5. Appuyez sur Tester le portail pour modifier le profil existant ou sur Ajouter un profil pour en créer un.<br> 6. Appuyez sur Modèle STB.<br> 7. Appuyez sur MAG 250 ou sur le STB que vous souhaitez émuler.<br> 8. Appuyez sur Paramètres du portail<br> 9. Appuyez sur URL du portail.<br> 10. Entrez votre portail pour MAG et STB: http://premium-iptv.link:6969/c, vous devez d'abord acheter ou demander l'essai d'iptv, puis appuyez sur OK.<br> 11. Maintenant, appuyez sur Résolution de l'écran<br> 12. Nous vous recommandons de choisir 1280 × 720. Vous êtes le bienvenu pour choisir plus haut, mais cela peut être lent.<br> 13. ÉTAPE LA PLUS IMPORTANTE: Faites défiler la liste et recherchez l’adresse MAC. Il s’agit d’un numéro important, car c’est ainsi que votre service IPTV identifiera votre décodeur.<br> 14. Vous devez nous indiquer votre adresse MAC. Faites un émulateur IPTV pour Android IPTV STB. Une fois que vous recevez un email<br> en disant que votre commande est terminée, vous pouvez lancer StbEmu.<br> Prendre plaisir.
+
+       </p>
+       
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_STB_Emulator()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+
+<!------------------Use Iptv On Kodi---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+       Utiliser Iptv sur Kodi
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+                    
+        <p class="text-card"> Qu'est-ce qu'un client simple PVR IPTV? PVR IPTV Simple Client est un addon PVR de base pour le support Kodi permettant de lire les listes de lecture m3u, la diffusion IPTV, les chaînes de radio et les fichiers EPG.</p>
+        
+        
+       
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_PVR_IPTV()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+<!------------------Use Iptv On Mag Box---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur Mag Box
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+                    
+                    <p class="text-card">
+
+                        Assurez-vous que votre adresse MAC a été enregistrée. Assurez-vous d’entrer votre adresse MAC correctement dans la section MAC. Si vous vous demandez où trouver votre adresse MAC? Pour trouver l’adresse MAC de votre MAG box, retournez-la simplement et vous pourrez recherchez l'adresse MAC à l'arrière de votre appareil. Et enregistrez-vous avec votre adresse MAC
+                      
+
+                    </p>
+        
+        
+       
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_Mag_Box()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+<!------------------Use Iptv On Enigma2---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur Enigma2
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+                    
+                    <p class="text-card"> Comment fait setup Enigma2 IPTV </p>
+                    <p class="text-card"> (Zgemma) devices use PuTTY </p>
+                   
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_Enigma2()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+
+<!------------------Use Iptv On FireTV (Firestick)---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur FireTV 
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+                  
+                    <p class="text-card">  Le FireStick est l’un des meilleurs appareils pour regarder l’IPTV dans ce tutoriel. Nous allons vous montrer comment. Mise en placeDans cette méthode, nous allons utiliser notre ordinateur pour installer Kodi. IPTV FireStick commence par télécharger et installer adbLink Tool. Nous avons maintenant besoin d’une version Kodi vouloir installer sur notre FireStick Puisque nous utilisons un Firestick qui est basé sur Android, nous devons télécharger la version APK de Kodi (ARM)
+                       
+                       </p>
+                   
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_FireTV()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+<!------------------Use Iptv On Openbox V8S---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur Openbox V8S
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col >   
+
+                    <p class="text-card"> 
+                        Openbox V8S est si populaire parce qu’il est bon marché, facile à utiliser et simple, car la TVIP domine le marché, notamment si vous êtes un utilisateur de CCCam. Désormais, les utilisateurs IPTV d’Openbox n’ont pas d’option si ce n’est exécuter le service IPTV sur cette box. Vous essayez de configurer Openbox IPTV V8S et vous avez du mal à utiliser IPTV à votre Openbox V8S. Laissez-moi vous aider.<br> L'application IPTV Player bien connue sur Openbox v8s s'appelle WebTV. Vous devez simplement importer Fichier M3U utilisant un lecteur flash USB sur votre Openbox IPTV V8S et le travail est terminé. 
+                     
+                    </p>
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_Openbox_V8S()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+<!------------------Use Iptv On Dreamlink T1 and T1 plus---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur Dreamlink T1 and T1 plus
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col > 
+                
+                    <p class="text-card"> 
+                        
+                        De nos jours, le divertissement est très différent de ce qu'il était il n'y a pas si longtemps. La technologie moderne nous a permis de regarder des émissions et des films sans souscrire à un abonnement coûteux à la télévision par câble. Les Box IPTV tels que les Dreamlink T1 et T1 + peuvent enfin remplacer complètement votre service de câblodistribution existant. Mieux encore, ils vous offrent beaucoup plus d’options de divertissement pour une fraction de le coût des fournisseurs de télévision traditionnelle. Dreamlink - L'un des meilleurs Box IPTV sur le marché aujourd'hui. Si vous voulez regarder la télévision en direct, je vous recommande cette Box. Dreamlink T1 et T1 Plus comportent de nombreuses fonctionnalités qui vous feront tomber amoureux de Box.
+                       
+                    </p>
+                    
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_Dreamlink_T1()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+                
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+<!------------------Use Iptv On ROKU---------------------------->
+<ion-card  class="card">
+    <ion-card-header class="card-header">
+        Utiliser Iptv sur ROKU
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+     
+            <ion-row class="text-card">
+                <ion-col > 
+
+                    <p class="text-card"> 
+                        Je vais vous montrer un excellent service IPTV qui fonctionnera sur votre IPTV Roku.<br> Il vous donnera plus de 8000 chaînes du monde entier avec 38 différents pays et plusieurs langues, y compris la vidéo à la demande (VOD).<br> Alors, laissez-moi vous montrer comment obtenir 73 000 canaux IPTV et 9 600 VOD HD sur Roku.<br> Ce tutoriel vous guidera à travers les instructions de configuration simples de votre IPTV Roku. Suivez-moi étape par étape pour installer IPTV Roku et vous aurez la liste complète des chaînes. Mais avec Roku, vous devez être patient. Il est normal de prendre 5-6 minutes pour charger la liste. La raison pour laquelle cela prend tant de fois est que nous avons tant de chaînes et de vidéos à la demande. S'il vous plaît, soyez patient et attendez. Vous avez besoin:<br> - Téléchargez Web Video Caster sur votre téléphone. Télécharger pour iOS et Android<br> - Assurez-vous que votre Roku et votre téléphone sont connectés au même réseau Wifi 
+                    </p>
+                    
+                    
+                </ion-col> 
+            </ion-row>
+           
+            <ion-row class="text-card">
+                
+                <ion-col >
+                 <button ion-button block round color="primary"  (click)="youtube_video_ROKU()" >      
+                            Video
+                 </button>
+                </ion-col> 
+                   
+            </ion-row>
+  
+               
+
+    </ion-card-content>
+</ion-card>
+<!---------------------------------------------->
+</ion-list>
+<ion-list *ngSwitchCase="'whatisiptv'">
+
+
+  <!------------------Tutorial use IPTV VLC---------------------------->
+  <ion-card  class="card">
+        <ion-card-header class="card-header">
+            Tutorial use IPTV VLC
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+         
+                <ion-row class="text-card">
+                    <ion-col >   
+            <p class="text-card">
+                 VLC is a great program if you want
+                to stream Live TV from your PC and 
+                Laptop . You simply
+                 need an M3U format channel list
+                 to run it with this software.</p>
+           
+                    </ion-col> 
+                </ion-row>
+               
+                <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_tuto_vlc()" >      
+                                Watch
+                              </button>
+                        </ion-col> 
+                       
+                </ion-row>
+      
+                   
+  
+        </ion-card-content>
+    </ion-card>
+    <!---------------------------------------------->
+  
+  
+    <!------------------How to install IPTV channels for android IPTV?---------------------------->
+    <ion-card  class="card">
+        <ion-card-header class="card-header">
+             Use Iptv On Android 
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+         
+                <ion-row class="text-card">
+                    <ion-col >   
+                        
+                         
+            <p class="text-card">
+                Many apps for play IPTV on android 
+                 phone but we just recommend the 
+                best  IPTV app for android IPTV 
+                1. IPTV APP
+                2. Perfect Player IPTV
+                3. IPTV PREMIUM</p>
+           
+                    </ion-col> 
+                </ion-row>
+               
+                <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_android_IPTV()" >      
+                                Watch
+                              </button>
+                        </ion-col> 
+                       
+                </ion-row>
+      
+                    
+  
+        </ion-card-content>
+    </ion-card>
+    <!---------------------------------------------->
+  
+  
+     <!------------------How to set up Smart IPTV on Smart tv?---------------------------->
+     <ion-card  class="card">
+        <ion-card-header class="card-header">
+            Use Iptv On Smart Tv
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+         
+                <ion-row class="text-card">
+                    <ion-col >   
+                        
+                          
+                         
+            <p class="text-card">
+              This tutorial is made from an  
+              LG Smart TV but should be the 
+               same process as on a Samsung TV.
+               1.Installing the application 
+               Smart IPTV on Smart TV
+              Installing from the LG store
+              2.Start Application 
+               3.Configuring the application
+               To use your streams, 
+              you should visit this page: 
+               http://siptv.eu/mylist/
+               and https://siptv.app/news/
+            </p>
+            
+           
+                    </ion-col> 
+                </ion-row>
+               
+                <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_Smart_tv()" >      
+                                Watch
+                     </button>
+                    </ion-col> 
+                       
+                </ion-row>
+      
+                    
+  
+        </ion-card-content>
+    </ion-card>
+    <!---------------------------------------------->
+  
+     <!------------------GSE IPTV for IOS and Apple TV---------------------------->
+     <ion-card  class="card">
+        <ion-card-header class="card-header">
+            GSE IPTV for IOS and Apple TV
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+         
+                <ion-row class="text-card">
+                    <ion-col >   
+            
+                         
+            <p class="text-card">
+              This tutorial will guide you 
+              through the setup GSE IPTV for
+             an Apple iPad, Apple iPhone or
+              IPTV Apple TV. There are a 
+             few of these available in App Store,
+               however, this tutorial 
+             is based on a free app called ‘GSE IPTV’,
+             this app is free to download and use. link :
+              https://itunes.apple.com/us/app/
+              gse-smart-iptv/id1028734023?mt=8
+            </p>
+            
+            
+           
+                    </ion-col> 
+                </ion-row>
+               
+                <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_Apple_TV()" >      
+                                Watch
+                     </button>
+                    </ion-col> 
+                       
+                </ion-row>
+  
+                <ion-row class="text-card">
+                    <ion-col >
+                        <p class="text-card"> Install Kodi on IPTV Apple TV 4</p>
+                    </ion-col>
+  
+                  </ion-row>
+  
+                  <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_kodi_Apple_TV()" >      
+                                Watch
+                     </button>
+                    </ion-col> 
+                       
+                </ion-row>
+  
+                <ion-row class="text-card">
+                    <ion-col >
+                        <p class="text-card"> How to use IPTV with KODI</p>
+                    </ion-col>
+  
+                  </ion-row>
+  
+                  <ion-row class="text-card">
+                    
+                    <ion-col >
+                     <button ion-button block round color="primary"  (click)="youtube_video_IPTV_with_KODI()" >      
+                                Watch
+                     </button>
+                    </ion-col> 
+                       
+                </ion-row>
+      
+                    
+  
+        </ion-card-content>
+    </ion-card>
+    <!---------------------------------------------->
+   <!------------------Setup IPTV for Android STB Emulator---------------------------->
+   <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Setup IPTV for Android STB Emulator
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+                        
+                       
+         <p class="text-card">
+  
+          1. Download StbEmu (Free) from the Google Play Store onto your Android device
+          
+         2. Load Stb Emulator and you will see this screen
+           
+         3. Tap near the top-right corner,then click Settings—the 4th icon from the right
+          
+         4. Tap Profiles
+         5. Tap Test portal to modify the existing profile or Add profile to create a new one
+         
+         6. Tap STB Model.
+         7. Tap MAG 250, or whichever STB you wish to emulate
+          
+         8. Tap Portal settings
+          9. Tap Portal URL
+         10. Enter your Portal for MAG and STB: http://premium-iptv.link:6969/c you need to buy or ask iptv trial first and press OK
+          
+         11. Now tap Screen Resolution
+         12. We recommend you choose 1280×720. You are welcome to choose higher, but it may be laggy.
+          
+          13. MOST IMPORTANT STEP: Scroll down and find the MAC address.This is an important number because it is how your IPTV service will identify your set-top box.
+          
+         14. You must tell us your MAC address.Done IPTV for Android IPTV STB Emulator. Once you get an email 
+          
+          saying your order’s been completed, you can launch StbEmu.
+          
+          Enjoy.
+  
+         </p>
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_STB_Emulator()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  
+  <!------------------Use Iptv On Kodi---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On Kodi
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+          <p class="text-card"> What is PVR IPTV simple client? PVR IPTV Simple Client is a basic PVR Addon for Kodi support play m3u playlists, streaming IPTV, radio channels and EPG.</p>
+          
+          
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_PVR_IPTV()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  <!------------------Use Iptv On Mag Box---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On Mag Box
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+                      <p class="text-card">
+  
+              Make sure your MAC address was registered,please make sure you enter your MAC address correctly in MAC section.
+              If you wonder where to find your MAC address?
+              In order to find the MAC address of your MAG box, simply turn the box around and you can   
+              find the MAC address on the backside of your device. And register with your MAC address
+                        
+  
+                      </p>
+          
+          
+         
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Mag_Box()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  <!------------------Use Iptv On Enigma2---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On Enigma2
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                      
+                      <p class="text-card"> How to setup Enigma2 IPTV </p>
+                      <p class="text-card"> (Zgemma) devices Using PuTTY </p>
+                     
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Enigma2()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  
+  <!------------------Use Iptv On FireTV (Firestick)---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On FireTV 
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+                    
+                      <p class="text-card">  The FireStick is one of the best Devices to watch IPTV on in this Tutorial we will show you how. 
+                       Setting things upIn this Method, we will use our pc to install Kodi for setup IPTV FireStick First off download & install adbLink Tool Now we need a Kodi version which we
+                       want to install on our Fire Stick  Since we are using a Firestick which is base  on Android we need to download the  APK Version of Kodi (ARM)
+                         
+                         </p>
+                     
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_FireTV()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  <!------------------Use Iptv On Openbox V8S---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On Openbox V8S
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col >   
+  
+                      <p class="text-card"> 
+                          Openbox V8S is so popular box because it is cheap, easy to use and straightforward as IPTV is dominating the market, some especially if you are a CCCam user. Now  of the Openbox IPTV users have no option except running the IPTV service on this box. 
+                        You try to setup Openbox IPTV V8S and you have some struggling to run IPTV on the 
+                      Open box V8S. Let me help you.
+                       The well known IPTV Player app on Openbox v8s is called WebTV. You simply need to import 
+                     M3U file using USB flash drive onto your Openbox IPTV V8S and the job is done. 
+                       
+                      </p>
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Openbox_V8S()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  <!------------------Use Iptv On Dreamlink T1 and T1 plus---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On Dreamlink T1 and T1 plus
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col > 
+                  
+                      <p class="text-card"> 
+                          
+                          Entertainment these days is vastly different from what it used to be not too long ago.
+                          
+                           Modern technology has made it possible for us to watch shows and  movies without having an expensive cable TV subscription.  
+                           
+                          
+                           IPTV boxes such as the  Dreamlink T1 and T1+ are finally able to fully replace your existing cable service.
+                            Better yet, they provide you a lot more  entertainment options at a fraction of  
+                            the cost of traditional TV providers.
+                           Dreamlink- One of the top IPTV box in the market today.
+                          If you want to enjoy watching live TV, I recommend this box.
+                          Dreamlink T1 and T1 Plus come with a lot of features that will make you fall in love with the box.
+                         
+                      </p>
+                      
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_Dreamlink_T1()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  <!------------------Use Iptv On ROKU---------------------------->
+  <ion-card  class="card">
+      <ion-card-header class="card-header">
+          Use Iptv On ROKU
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+       
+              <ion-row class="text-card">
+                  <ion-col > 
+  
+                      <p class="text-card"> 
+                          I’m going to show you great BestbuyIPTV service that gonna work on your IPTV Roku. 
+                           It will give you more than 8000 Channels from all over the world with 38 different 
+                           countries and multiple languages including video on demand (VOD). 
+                            So, let me show you how to get 73000  IPTV channels and 9600 VOD HD on Roku.  
+                           
+                           This tutorial will guide you through the simple setup instruction for your IPTV Roku. Follow me step by step to install IPTV Roku and you will have all channels list. But with Roku, you must be patient. It is normal to take 5-6 minutes to load the list. 
+                          The reason why it takes so many times is we have so many channel and VOD. 
+                           Please just be patient and wait for it. 
+                           You need:   
+                            – Download Web Video Caster on your Phone. Download for iOs and Android  
+                            – Make sure your Roku and phone are connected to the same Wifi 
+                             
+                      </p>
+                      
+                      
+                  </ion-col> 
+              </ion-row>
+             
+              <ion-row class="text-card">
+                  
+                  <ion-col >
+                   <button ion-button block round color="primary"  (click)="youtube_video_ROKU()" >      
+                              Watch
+                   </button>
+                  </ion-col> 
+                     
+              </ion-row>
+    
+                 
+  
+      </ion-card-content>
+  </ion-card>
+
+
+
+
+</ion-list>
+
+
+
+</div>
+</ion-content>

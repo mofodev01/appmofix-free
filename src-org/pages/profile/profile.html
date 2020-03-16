@@ -1,0 +1,818 @@
+
+<div *ngFor="let item of items" >
+
+ 
+  
+  <ion-header *ngIf="item.status == 'Active'">
+
+    <ion-navbar ><ion-title >
+      Accueil
+    </ion-title></ion-navbar>
+
+    <ion-navbar >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+
+         <ion-buttons end>
+            <button ion-button icon-only light (click)="info()">   
+                <ion-icon name="notifications-outline" *ngFor="let item of items_notif"><ion-badge color="secondary">{{item.count}}</ion-badge></ion-icon>           
+            </button>
+        </ion-buttons>
+      
+  
+        <ion-buttons end>
+          <button ion-button left icon-only (click)="refresh()">
+             <ion-icon  name="refresh" ></ion-icon> 
+          </button>
+        </ion-buttons>
+  
+              <ion-buttons end>
+                    <button ion-button left icon-only (click)="logout()">
+                       <ion-icon  name="log-out" ></ion-icon> 
+                    </button>
+             </ion-buttons>
+        
+    </ion-navbar>
+  
+  
+  </ion-header>
+  <ion-header *ngIf="item.status != 'Active'">
+
+    <ion-navbar >
+     
+  
+      <ion-title >
+          Accueil
+        </ion-title>
+
+        <ion-buttons end>
+            <button ion-button icon-only light (click)="liste_match()">   
+                <ion-icon name="notifications-outline" *ngFor="let item of items_notif"><ion-badge color="secondary">{{item.count}}</ion-badge></ion-icon>           
+            </button>
+        </ion-buttons>
+
+      
+  
+        <ion-buttons end>
+          <button ion-button left icon-only (click)="refresh()">
+             <ion-icon  name="refresh" ></ion-icon> 
+          </button>
+        </ion-buttons>
+  
+              <ion-buttons end>
+                    <button ion-button left icon-only (click)="logout()">
+                       <ion-icon  name="log-out" ></ion-icon> 
+                    </button>
+             </ion-buttons>
+        
+    </ion-navbar>
+  
+   
+  
+  </ion-header>
+
+</div>
+
+
+  
+
+  <ion-content >
+    <ion-toolbar no-border-top>
+     
+    </ion-toolbar>
+      <ion-toolbar no-border-top>
+   
+      </ion-toolbar>
+      <ion-toolbar no-border-top>
+          <ion-title>
+              <img src="assets/icon/appmofix.png" width="140px" style="display:inline-block" height="40px"/>
+            </ion-title>
+         
+              <ion-buttons end>
+                  <button ion-button left icon-only (click)="gotprofilengpage()">
+                      
+                    <img src="assets/img/uk.svg" alt=""  height="35px" width="40px">
+                      
+                  </button>
+           </ion-buttons>
+        </ion-toolbar>
+
+      <ion-toolbar no-border-top>
+          <ion-segment [(ngModel)]="index">
+      
+            <ion-segment-button value="home" >
+                Statut
+            </ion-segment-button>
+            <ion-segment-button value="whatisiptv">
+              c'est quoi IPTV?
+            </ion-segment-button>
+            <ion-segment-button value="whatisiptvspace">
+                App
+            </ion-segment-button>
+            
+      </ion-segment>
+      </ion-toolbar>
+
+      
+    <div [ngSwitch]="index">
+  
+      <ion-list *ngSwitchCase="'home'">
+  
+    
+  
+          <ion-card >
+  
+              <ion-item *ngFor="let item of items" class="card">
+                 
+            <ion-row class="text-card">
+              <ion-col >
+              <strong> Date de creation :</strong>
+              </ion-col>
+              <ion-col >
+            {{item.created_date}}
+              </ion-col>
+            
+            </ion-row >
+            <ion-row class="text-card">
+              <ion-col >
+                  <strong> Date d'expiration :</strong>
+              </ion-col>
+              <ion-col >
+            {{item.expired_date}}
+              </ion-col>
+            
+            </ion-row>
+            <ion-row class="text-card">
+              <ion-col >
+                  <strong> Statut:</strong>
+              </ion-col>
+  
+              <ion-col *ngIf="item.status == 'New'" >
+                  <strong style="color: rgb(255, 174, 0)">Inactif</strong>
+                </ion-col>
+      
+              <ion-col *ngIf="item.status == 'Active'" >
+                <strong style="color: lime">{{item.status}}</strong> 
+              </ion-col>
+              <ion-col *ngIf="item.status == 'Free'" >
+                <strong style="color: red">{{item.status}}</strong>
+              </ion-col>
+      
+              <ion-col *ngIf="item.status == 'Inactif'" >
+                  <strong style="color: red">{{item.status}}</strong>
+                </ion-col>
+      
+                <ion-col *ngIf="item.status == 'Pending'" >
+                    <strong style="color: lime">{{item.status}}</strong>
+                  </ion-col>
+      
+                  <ion-col *ngIf="item.status == 'Expired'" >
+                      <strong style="color: red">{{item.status}}</strong>
+                    </ion-col>
+            
+            </ion-row>
+              </ion-item>
+          
+            
+            </ion-card>
+      
+      
+            <ion-card  class="card">
+                <ion-card-header class="card-header">
+                    <strong> REMARQUE :</strong>
+                </ion-card-header>
+                
+                <ion-card-content class="text-card" >
+      
+            <ion-row class="text-card" *ngFor="let item of items">
+                
+               
+                <ion-col *ngIf="item.status == 'Active'" >
+  
+               <p class="text-card">
+                  <strong  style="color: #079992;">
+                        Votre abonnement est activé, pour plus d'infos visitez <a (click)="godownloadPage()"> Telecharger </a> 
+                       ou <a  (click)="gotutorialPage()"> Tutoriels </a> 
+                  </strong>
+                </p>
+                      
+                   
+  
+                </ion-col>
+             
+           
+      
+              <ion-col *ngIf="item.status == 'New'" >
+              <p class="text-card">
+                 <strong  style="color: rgb(255, 174, 0);">
+                  Bienvenue , nous souhaitons un bon moment avec Appmofix!</strong></p>
+                  <p class="text-card">  <strong  style="color: rgb(255, 174, 0);">Le contenu est vide, S'il vous plaît appuyez sur le bouton  "demande d'essai" Pour <a (click)="scrollTo()"> activer</a> votre compte.
+                </strong>
+              </p>
+                  
+              </ion-col>
+              
+              <ion-col *ngIf="item.status == 'Expired'" >
+                  <p class="text-card">
+                    <strong  style="color: red;">
+                      Votre abonnement a expiré Veuillez payer pour regarder le contenu.
+                  </strong>
+                </p>
+                  
+              </ion-col>
+      
+              
+            
+            </ion-row>
+           
+          
+            </ion-card-content>
+            </ion-card>
+
+     
+
+          <ion-card class="card-web-site" (click)="openWebpage()">
+              <img src="assets/img/site.png"/>
+              <ion-card-content>
+                <ion-card-title class="text-card">
+                    <strong> Notre nouveau site internet</strong>
+                  </ion-card-title>
+                <p class="text-card">
+                    Nous vous invitons à visiter notre site web,
+                    Vous trouverez une gamme d'applications qui répondra à vos souhaits.
+                  
+                </p>
+              </ion-card-content>
+            </ion-card>
+<div *ngFor="let item of items">
+<div *ngIf="item.status == 'Active'">  
+            <ion-card class="card-web-site" >
+                <img src="assets/img/iptv-p.png" (click)="iptvApp()" />
+                <ion-card-content>
+                  <ion-card-title class="text-card">
+                      <strong> Premium IPTV Application</strong>
+                    </ion-card-title>
+                  <p class="text-card">
+                      En raison de la forte pression sur l'application Appmofix TV,
+                      Nous vous invitons à télécharger Premium IPTV qui se caractérise par une vitesse et une image haute résolution.
+                    </p> 
+                    <p class="text-card">
+                      <strong style="color: rgb(255, 238, 0);">REMARQUE:</strong>  Appmofix TV est une application pour vendre des abonnements IPTV uniquement.</p>
+                      <p class="text-card">
+                      Pour exécuter l'application Premium IPTV , entrez les informations suivantes:
+                  </p>  
+                      
+                     <ion-list class="card-web-site">
+                      <ion-item *ngFor="let item of items" class="card-web-site">
+                        <ion-label color="dark"><strong>Username :</strong></ion-label>
+                        <ion-input type="text" [(ngModel)]="CopyTextUser" value="{{item.server_name}}"></ion-input>
+                        <button ion-button color="secondary" (click)="copyTextUser()"  round item-right><ion-icon name="copy"></ion-icon>
+                        </button>
+                      </ion-item>
+                      <ion-item *ngFor="let item of items" class="card-web-site">
+                        <ion-label color="dark"><strong>Password :</strong></ion-label>
+                        <ion-input type="text" [(ngModel)]="CopyTextPass" value="{{item.server_pass}}"></ion-input>
+                        <button ion-button color="secondary" (click)="copyTextPass()"  round item-right><ion-icon name="copy"></ion-icon>
+                        </button>
+                      </ion-item>
+                      </ion-list>
+                    
+                  
+                </ion-card-content>
+              </ion-card>
+     
+</div>  
+</div>
+
+<!------------------------------------------------------------------->
+
+<div *ngFor="let item of items">
+    <div *ngIf="item.status == 'Active'">  
+                <ion-card class="card-web-site" >
+                    <img src="assets/img/gse.png" (click)="gseApp()" />
+                    <ion-card-content>
+                      <ion-card-title class="text-card">
+                          <strong> GSE SMART IPTV</strong>
+                        </ion-card-title>
+                      <p class="text-card">
+                          L'application GSE SMART IPTV est l'une des meilleures applications de lecture IPTV car elle contient un ensemble d'outils.<br/>
+                          Les outils les plus importants pris en charge:<br/>
+                          Support: CHROMECAST<br/>
+                          Support: API XTREAM-CODES<br/>
+                          API prend en charge la liste de lecture automatique en direct et la vidéo à la demande, notamment les fichiers EPG et les informations sur le film<br/>
+                          Support: RECONNEXION AUTOMATIQUE DU FLUX LIVE<br/>
+                          Support: EPG XMLTV FORMAT (formats de fichiers locaux et distants, formats xml, zip, gz)<br/>
+                          Support: Contrôle parental<br/>
+                          Support: Copier et coller le contenu M3U<br/>
+                          Support: Changement de langue dynamique (31 LANGUES)<br/>
+                          Support: plusieurs thèmes<br/>
+                          Support: le lecteur intégré prend en charge tous les formats populaires, y compris les jetons RTMP.<br/>
+
+                          Support: prise en charge des sous-titres intégrés et des sous-titres externes (SRT)
+                          (Prise en charge des sous-titres bimap intégrés: DVB TELETEXT, sous-titre dvd, sous-titre dvb, xsub, sous-titre pg hdmv, ASS, SSA, SUBRIP .... et plus ....)<br/>
+                        </p> 
+                        <p class="text-card">
+                          <strong style="color: rgb(255, 238, 0);">REMARQUE:</strong>  Appmofix TV est une application pour vendre des abonnements IPTV uniquement.</p>
+                          <p class="text-card">
+                          Pour exécuter l'application GSE SMART IPTV , entrez les informations suivantes:
+                        </p>  
+                          
+                         <ion-list class="card-web-site">
+
+                          <ion-item  class="card-web-site">
+                            <button ion-button block round color="secondary" (click)="launch_video()">
+                              tutorial video
+                            </button>
+                          </ion-item>
+
+                          <ion-item *ngFor="let item of items" class="card-web-site">
+                            <ion-label color="dark"><strong>Portal :</strong></ion-label>
+                            <ion-input type="text" [(ngModel)]="CopyTextPortal" value="{{item.host}}"></ion-input>
+                            <button ion-button color="secondary" (click)="copyTextPortal()"  round item-right><ion-icon name="copy"></ion-icon>
+                            </button>
+                          </ion-item>
+                          <ion-item *ngFor="let item of items" class="card-web-site">
+                            <ion-label color="dark"><strong>Username :</strong></ion-label>
+                            <ion-input type="text" [(ngModel)]="CopyTextUser" value="{{item.server_name}}"></ion-input>
+                            <button ion-button color="secondary" (click)="copyTextUser()"  round item-right><ion-icon name="copy"></ion-icon>
+                            </button>
+                          </ion-item>
+                          <ion-item *ngFor="let item of items" class="card-web-site">
+                            <ion-label color="dark"><strong>Password :</strong></ion-label>
+                            <ion-input type="text" [(ngModel)]="CopyTextPass" value="{{item.server_pass}}"></ion-input>
+                            <button ion-button color="secondary" (click)="copyTextPass()"  round item-right><ion-icon name="copy"></ion-icon>
+                            </button>
+                          </ion-item>
+                          </ion-list>
+                        
+                      
+                    </ion-card-content>
+                  </ion-card>
+         
+    </div>  
+    </div>
+
+
+
+  <!------------------------------------------------------------------->
+      
+      <ion-card >
+      
+        <ion-item *ngFor="let item of items" class="card">
+          
+        <h3 class="h-color-text"><strong>Information de compte:</strong></h3>
+        
+        <ion-row class="text-card">
+          <ion-col >
+              <strong> Username   :</strong>
+          </ion-col>
+          <ion-col >
+        {{item.username}}
+          </ion-col> 
+          
+       
+      </ion-row>
+      <ion-row class="text-card">
+          <ion-col >
+              <strong> Tele :</strong>
+          </ion-col>
+          <ion-col >
+        {{item.telephone}}
+          </ion-col>
+       
+      </ion-row>
+      <ion-row class="text-card">
+          <ion-col >
+              <strong>Email     :</strong> 
+          </ion-col>
+          <ion-col class="text-card">
+        {{item.email}}
+          </ion-col>
+       
+      </ion-row>
+      <ion-row class="text-card">
+         
+          <ion-col>
+            <button ion-button icon-start clear small (click)="setting(item.username,item.telephone,item.email,item.mac_add)">
+              <ion-icon name="settings"></ion-icon>
+              <div><strong>Réglage</strong></div>
+            </button>
+          </ion-col>
+      
+          
+          
+        </ion-row>
+        </ion-item>
+      
+        
+      
+      </ion-card>
+      <!-------------------------------------------------------------------------------------------------->
+      <!-------------------------------------------------------------------------------------------------->
+      <div *ngFor="let show_free of item_free_show">
+      <div *ngIf="show_free.free_state == 'checked'">
+  
+   <!-------------------------------------------------------------------------------------------------->
+   <ion-card >
+  
+      
+  
+      <ion-card-content>
+          <ion-card-title  class="text-card" text-center style="background-color: #b71540;">
+              <strong> Gratuit</strong>
+          </ion-card-title>
+        <ion-card-title text-center class="text-card">
+           <strong style="color:rgb(250, 32, 3);">0 $</strong> 
+        </ion-card-title>
+        <p class="text-card"> 8000 Channels</p>
+        <p class="text-card"> 8000 VOD</p>
+        <p class="text-card"> Mises à jour gratuites</p>
+        <p class="text-card"> HD & SD Channels</p>
+        <p class="text-card"> Premium Channels</p>
+        <p class="text-card"> 44 Pays</p>
+        <p class="text-card"> Supporter tous les appareils</p>
+        <p class="text-card"> Support Premium</p>
+        <p class="text-card">  99.9% Uptime</p>
+        
+      </ion-card-content>
+  
+      <div *ngFor="let item of items">
+  
+      <ion-row class="sign-in-button-container" *ngIf="item.status != 'New'">
+          <ion-col text-center >
+            <button ion-button block round color="primary" [disabled]="true" (click)="confirm_free()" >      
+              Demande d'essai
+            </button>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row class="sign-in-button-container" *ngIf="item.status == 'New'">
+            <ion-col text-center >
+              <button ion-button block round color="primary" [disabled]="false" (click)="confirm_free()" >      
+                Demande d'essai 
+              </button>
+            </ion-col>
+          </ion-row>
+  
+          
+  
+      
+  </div>
+  </ion-card>
+  
+  <!-------------------------------------------------------------------------------------------------->
+  </div><!--fin-ngif-show-free-->
+  </div><!--fin-ngfor-show-free-->
+  
+      <!-------------------------------------------------------------------------------------------------->
+  
+      <!-------------------------------------------------------------------------------------------------->
+      <div *ngFor="let show_pay of item_pay_show">
+        <div *ngIf="show_pay.pay_state == 'checked'">
+    
+     <!-------------------------------------------------------------------------------------------------->
+  
+      <ion-card >
+  
+        <ion-card-content>
+            <ion-card-title  class="text-card" text-center style="background-color: #b71540;">
+                <strong> 1 MOIS</strong>
+            </ion-card-title>
+          <ion-card-title text-center class="text-card">
+             <strong style="color:rgb(250, 32, 3);">12 $</strong> 
+          </ion-card-title>
+              <p class="text-card"> 8000 Channels</p>
+              <p class="text-card"> 8000 VOD</p>
+              <p class="text-card"> Mises à jour gratuites</p>
+              <p class="text-card"> HD & SD Channels</p>
+              <p class="text-card"> Premium Channels</p>
+              <p class="text-card"> 44 Pays</p>
+              <p class="text-card"> Supporter tous les appareils</p>
+              <p class="text-card"> Support Premium</p>
+              <p class="text-card">  99.9% Uptime</p>
+              
+          
+        </ion-card-content>
+    
+        <div *ngFor="let item of items">
+    
+        <ion-row class="sign-in-button-container" *ngIf="item.status == 'Active'">
+            <ion-col text-center >
+            <button ion-button block round color="primary" [disabled]="true" (click)="payement_1_Month()">
+                Paypal
+              </button>   
+           
+            </ion-col>
+          </ion-row>
+    
+          <ion-row class="sign-in-button-container" *ngIf="item.status != 'Active'">
+              <ion-col text-center >
+
+            <button ion-button block round color="primary" [disabled]="false" (click)="payement_1_Month()"> 
+                Paypal 
+            </button>
+
+
+              </ion-col>
+            </ion-row>
+    
+            
+    
+        
+    </div>
+    </ion-card>
+    
+    <!-------------------------------------------------------------------------------------------------->
+  
+    <!-------------------------------------------------------------------------------------------------->
+    
+   
+    <!-------------------------------------------------------------------------------------------------->
+    
+    
+      </div><!--fin-ngif-show-pay-->
+      </div><!--fin-ngfor-show-pay-->
+
+
+
+
+
+
+    <!-------------------------------------------------------------------------------------------------->
+  <!---------------------------------------test-ios--------------------------------------------->
+  <div *ngFor="let show_stop of item_input_stop">
+    <div *ngIf="show_stop.value == '1'">
+  <ion-card >
+  
+      
+  
+    <ion-card-content>
+        <ion-card-title  class="text-card" text-center style="background-color: #b71540;">
+            <strong> Gratuit</strong>
+        </ion-card-title>
+      <ion-card-title text-center class="text-card">
+         <strong style="color:rgb(250, 32, 3);">0 $</strong> 
+      </ion-card-title>
+      <p class="text-card"> Mises à jour gratuites</p>
+      <p class="text-card"> HD & SD Channels</p>
+      <p class="text-card"> Supporter tous les appareils</p>
+      <p class="text-card"> Support Premium</p>
+      <p class="text-card">  99.9% Uptime</p>
+      
+    </ion-card-content>
+
+    <div *ngFor="let item of items">
+
+    <ion-row class="sign-in-button-container" *ngIf="item.status != 'New'">
+        <ion-col text-center >
+          <button ion-button block round color="primary" [disabled]="true" (click)="confirm_free()" >      
+            Demande d'essai
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="sign-in-button-container" *ngIf="item.status == 'New'">
+          <ion-col text-center >
+            <button ion-button block round color="primary" [disabled]="false" (click)="confirm_free()" >      
+              Demande d'essai 
+            </button>
+          </ion-col>
+        </ion-row>
+
+        
+
+    
+</div>
+</ion-card>
+</div><!--fin-ngif-show-pay-->
+</div><!--fin-ngfor-show-pay-->
+      <!--------------------------------------------------------------------------------------->
+     
+          <div *ngFor="let show_stop of item_input_stop">
+            <div *ngIf="show_stop.value == '1'">
+    
+     
+  
+      <ion-card >
+  
+        <ion-card-content>
+            <ion-card-title  class="text-card" text-center style="background-color: #b71540;">
+                <strong> 1 MOIS</strong>
+            </ion-card-title>
+          <ion-card-title text-center class="text-card">
+             <strong style="color:rgb(250, 32, 3);">4 $</strong> 
+          </ion-card-title>
+              <p class="text-card"> Mises à jour gratuites</p>
+              <p class="text-card"> HD & SD Channels</p>
+              <p class="text-card"> Supporter tous les appareils</p>
+              <p class="text-card"> Support Premium</p>
+              <p class="text-card"> 99.9% Uptime</p>
+              
+          
+        </ion-card-content>
+    
+        
+    
+        <ion-row class="sign-in-button-container" >
+            <ion-col text-center >
+            <button ion-button block round color="primary" (click)="payement_1_Month_test">
+                Paypal
+              </button>   
+           
+            </ion-col>
+          </ion-row>
+    
+    </ion-card>
+
+      </div><!--fin-ngif-show-pay-->
+      </div><!--fin-ngfor-show-pay-->
+
+
+
+<!-------------------------------------------------------------------------------------------------->
+  
+    <!-------------------------/-test-ios--------------------------------------------------------->
+    
+   
+    <!-------------------------------------------------------------------------------------------------->
+
+
+
+
+        
+      </ion-list>
+      <div *ngFor="let show_stop of item_input_stop">
+        <div *ngIf="show_stop.value != '1'">
+          <!-------------------------------------------------------------------------------------------------->
+          <div class="card" *ngFor="let show_stop of item_pay_stop"  >
+            <div *ngIf="show_stop.pay_stop == 'enable'" >
+            <!-------------------------------------------------------------------------------------------------->
+            <ion-card  >
+              <ion-card-header class="card-header">
+                 REMARQUE :
+              </ion-card-header>
+              
+              <ion-card-content class="text-card" >
+    
+          <ion-row class="text-card" >
+            <ion-col >
+              <p class="text-card">
+                <strong  style="color: red;">
+                  Les méthodes de paiement sont arrêtées. Veuillez essayer plus tard ou contactez-nous.
+              </strong>
+            </p>
+              
+          </ion-col>
+        </ion-row>
+           
+          
+      </ion-card-content>
+      </ion-card>
+  
+  
+  
+          </div><!--fin-ngif-show-stop-->
+        </div><!--fin-ngfor-show-stop-->
+
+
+      </div><!--fin-ngif-show-stop-ios-->
+    </div><!--fin-ngfor-show-stop-ios-->
+  
+      <ion-list *ngSwitchCase="'whatisiptv'">
+  
+         <!------------------wath is iptv?---------------------------->
+   <ion-card  class="card">
+      <ion-card-header class="card-header">
+        Qu'est-ce que l'IPTV? 
+      </ion-card-header>
+      <ion-card-content class="text-card" >
+     
+          
+               <!----------------------<ion-item class="card" >------------------------>
+  
+                       
+              <p class="text-card"> Iptv - Du point de vue d’un observateur de télévision, l’IPTV est très simple: au lieu de recevoir les programmes de télévision les signaux qui entrent dans votre maison à partir d'une antenne de toit, antenne parabolique ou câble à fibres optiques, vous les obtenez en streaming (téléchargés et joués presque simultanément) via votre Connexion Internet. Contrairement aux médias téléchargés, les offres IPTV la possibilité de diffuser en continu le média source. Comme un résultat, un lecteur multimédia client peut commencer à lire le contenu (comme une chaîne de télévision) presque immédiatement. C'est connu comme média en streaming. Pour comprendre en quoi la TVIP est différente de la télévision traditionnelle, Comparons le mode traditionnel de visionnement de la télévision avec IPTV. Le câble et le satellite fonctionnent en permettant aux utilisateurs ajuster à des canaux spécifiques au sein de ce signal et la différence fondamentale est que le câble est via une connexion filaire alors que satellite est sans fil jusqu'à ce qu'il atteigne votre maison. IPTV utilise un réseau basé sur le protocole Internet (IP) pour transmettre des chaînes de télévision au décodeur des utilisateurs. Les réseaux Internet diffèrent du câble et du satellite en proposant du contenu via le même client-serveur modèle qui rend les courriels, sites Web et autres Services Internet. Comme nous le verrons mentionné plus loin dans ce blog, IP ou Internet Protocol est la langue utilisée pour transférer les données paquets entre ordinateurs connectés à internet réseau. Contrairement au câble ou au satellite où le contenu est diffuser en temps réel, sur une transmission et oublier le modèle, IPTV a la capacité de stocker la programmation sur les serveurs à la fin de la transmission, permettant aux utilisateurs de demander le contenu sur Internet à tout moment.</p>
+          
+          
+    <!-----------------</ion-item>----------------------------->
+                  
+  
+      </ion-card-content>
+  </ion-card>
+  <!---------------------------------------------->
+  
+      <!------------------What are IPTV types?---------------------------->
+      <ion-card  class="card">
+          <ion-card-header class="card-header">
+            Quels sont les types IPTV?
+          </ion-card-header>
+          <ion-card-content class="text-card" >
+         
+             
+                         
+                  <p class="text-card"> 
+                    Les services IPTV peuvent être classés en trois groupes principaux: Vidéo à la demande (VOD): vous pouvez sélectionner un programme télévisé ou un film vous voulez regarder d'un large éventail, payer votre argent, et regardez-le là et ensuite. Télévision en direct et média en direct, avec ou sans lien l'interactivité. Média décalé dans le temps: p. Ex. télévision de rattrapage (rediffuser une émission télévisée il y avait des heures ou des jours de diffusion), start-over TV (rejoue la série télévisée en cours depuis son début) Les trois formes d’IPTV peuvent fonctionner en utilisant votre ordinateur et un navigateur Web ordinaire, via un terminal Boîte à afficher sur votre écran de télévision, même sur un téléphone portable comme un téléphone portable ou un iPod… les trois peuvent être livrés soit sur l'Internet public, soit par l'intermédiaire d'un réseau privé géré qui fonctionne essentiellement dans le de la même façon.
+                  </p>
+              
+          </ion-card-content>
+      </ion-card>
+      <!---------------------------------------------->
+      <!------------------How does IPTV work?---------------------------->
+      <ion-card  class="card">
+          <ion-card-header class="card-header">
+            Comment fonctionne l'IPTV?
+          </ion-card-header>
+          <ion-card-content class="text-card" >
+         
+              
+                   
+                  <p class="text-card">L’IPTV ressemble beaucoup à la navigation sur Internet. canal traditionnel surfant. Il utilise simplement l'IP (Internet Protocol), un protocole de transport qui est un mécanisme de livraison pour livrer les vidéos au spectateur. Lorsque le téléspectateur clique sur n’importe quel programme de télévision ou demande la vidéo, vidéo de différentes sources (serveurs) est divisé en paquets de données et envoyé sur Internet. Les serveurs vidéo transmettent les programmes par fibre optique câblé au foyer existant via une connexion internet et les demandes sont envoyées et les spectacles sont renvoyés.  </p>
+              
+              
+          </ion-card-content>
+      </ion-card>
+      <!---------------------------------------------->
+  
+      <!------------------How to use IPTV?---------------------------->
+      <ion-card  class="card">
+          <ion-card-header class="card-header">
+            Comment utiliser l'IPTV?
+          </ion-card-header>
+          <ion-card-content class="text-card" >
+         
+                  <p class="text-card">À ce moment précis, vous êtes impatient de en savoir plus sur l'utilisation de l'IPTV, quels appareils sont compatibles.<br> Tout d'abord, vous devez avoir une connexion Internet, une bonne vitesse est fortement recommandée (car certains Les canaux FHD nécessitent une connexion stable) Deuxièmement. un appareil est sûrement nécessaire, avec Iptv Appmofix vous pouvez utiliser sur presque tous les appareils: MAG box, Android Box, Boîte ouverte, PC, Smart TV, Apple TV, Enigma, Dreamlink, KODI till sur iPhone, Ipad, applications Android…<br> Commencer à enregistrer un compte ne peut être plus facile, tout ce que vous avez à faire est d'entrer votre adresse e-mail et sélectionnez votre type d'appareil, puis attendez un email avec les informations d'identifier.<br> Après avoir un compte d'essai, vous allez configurer votre appareil et commencez à en profiter !!!</p>
+                 
+          </ion-card-content>
+      </ion-card>
+      <!---------------------------------------------->
+      
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'whatisiptvspace'">
+  
+         <!------------------What is IPTV SPACE? ---------------------------->
+      <ion-card  class="card">
+          <ion-card-header class="card-header">
+            Qu'est-ce que l'IPTV Appmofix?? 
+          </ion-card-header>
+          <ion-card-content class="text-card" >
+         
+              
+                  <h2 class="card-header"> Iptv Appmofix offre une impressionnante </h2>
+                  <h2 class="card-header"> collection on-demand </h2>
+                  <h2 class="card-header">films, live action, et TV Emission</h2>
+             
+                    <h3 class="card-header">-Iptv Appmofix</h3>
+                    <p class="text-card">EExcellente qualité d'image (la plupart des vidéos sont en HD). Également, presque les canaux fonctionnent sans décalage ni mise en mémoire tampon. Nous mettons à jour le nouveau contenu presque quotidiennement.</p>
+                    
+                    <h3 class="card-header"> -VOD (Video on Demand)</h3>
+                    <p class="text-card"> Nous fournissons environ 20 paquets de VOD. Notre liste de VOD a été triée par pays, comme English Movie, Indian Movie, Kid Movie, 3D Movie, etc.</p>
+                    
+                  <h3 class="card-header"> -Compatible avec tous les appareils</h3>
+                   <p class="text-card">  Vous pouvez utiliser tous les appareils de votre choix et trouver des instructions pas à pas pour chaque appareil.</p>
+                  
+                    <p class="text-card">Imaginez que tous les jours quand vous rentrez du travail ou de l'école, vous allumez la télévision pour un moment de détente et votre émission préférée a été terminé. Vous devez regarder des programmes télévisés ennuyeux au lieu d'une émission de téléréalité fascinante. Ne serait-ce pas mieux si regarder la télévision était plus comme naviguer sur le Web, de sorte que vous pourrait choisir le programme que vous vouliez regarder quand et Où avez-vous envie de le regarder? Alors protocole Internet La télévision (IPTV) est la solution que vous recherchez IPTV utilise la technologie Internet pour diffuser des programmes télévisés à la demande.</p>
+               
+                  
+          </ion-card-content>
+      </ion-card>
+      <!---------------------------------------------->
+  
+      </ion-list>
+  
+    </div>
+  
+    <ion-fab right bottom>
+      <button (click)="scrollTo()" ion-fab color="primary"><ion-icon name="arrow-down"></ion-icon></button>
+    
+  </ion-fab>
+
+ 
+
+<!--
+  <ion-card class="card">
+    <ion-img src="assets/img/gse.png"></ion-img>
+    <ion-card-header>
+      
+      <ion-card-title>PayPal Sample</ion-card-title>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="paypal-button-container"></div>
+    </ion-card-content>
+  </ion-card>
+-->
+
+  
+  </ion-content>
+  
+  
