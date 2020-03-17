@@ -33,7 +33,7 @@ column: string = 'tvname';
     ,public JsonDataProvider: JsonDataProvider, public loadingCtrl: LoadingController
     ,public storage: Storage,private database: DatabaseProvider,
     public platform: Platform,private toast: Toast,private streamingMedia: StreamingMedia
-    ,public menuCtrl:MenuController /*,private admobFree: AdMobFree*/
+    ,public menuCtrl:MenuController ,private admobFree: AdMobFree
     ) {
       this.menuCtrl.enable(true)
      this.categorie = this.navParams.get('categorie'); 
