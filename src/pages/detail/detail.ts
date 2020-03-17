@@ -3,7 +3,7 @@ import { NavController, NavParams,Platform,LoadingController,MenuController} fro
 import { Storage } from '@ionic/storage';
 import { JsonDataProvider } from '../../providers/json-data/json-data';
 
-//import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
 import { DatabaseProvider } from '../../providers/database/database';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { Toast } from '@ionic-native/toast';
@@ -34,7 +34,7 @@ column: string = 'tvname';
     ,public JsonDataProvider: JsonDataProvider, public loadingCtrl: LoadingController
     ,public storage: Storage,private database: DatabaseProvider,
     public platform: Platform,private toast: Toast,private streamingMedia: StreamingMedia,
-   /* private admobFree: AdMobFree,*/
+   /**/ private admobFree: AdMobFree,
     public menuCtrl:MenuController
     ) {
       this.menuCtrl.enable(true)
@@ -112,7 +112,7 @@ column: string = 'tvname';
 }
 
 startVideo(url) {
- // this.launchInterstitial();
+ this.launchInterstitial();
   let options: StreamingVideoOptions = {
     successCallback: () => { console.log('Finished Video') },
     errorCallback: (e) => { console.log('Error: ', e) },
@@ -182,13 +182,13 @@ startVideo(url) {
              }, 2000);
          }
 
-        /*
+        /**/
 
 launchInterstitial() {
           
           const interstitialConfig: AdMobFreeInterstitialConfig = {
-                 // isTesting: true,// Remove in production
-                  autoShow: true,
+                  isTesting: true,// Remove in production
+                 // autoShow: true,
               //id: Your Ad Unit ID goes here
                   id:'ca-app-pub-3000905870244951/4658521773'
           };
@@ -203,5 +203,5 @@ launchInterstitial() {
         
       
         }
-*/
+
 }

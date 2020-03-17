@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111011916546",
+    "firebase_url": "https://space-iptv.firebaseio.com",
+    "project_id": "space-iptv",
+    "storage_bucket": "space-iptv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111011916546:android:b1ec0f8bb6533a7a",
+        "android_client_info": {
+          "package_name": "com.iptvmedia.space"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111011916546-3621ed2g0emcve6tdjushe2r2gjt0ktd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWoOMmLSTgXU7YlXAvXTz_xXxCnDnkuIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111011916546-3621ed2g0emcve6tdjushe2r2gjt0ktd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

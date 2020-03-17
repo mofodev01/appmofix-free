@@ -6,7 +6,7 @@ import { JsonDataProvider } from '../../providers/json-data/json-data';
 import { DatabaseProvider } from '../../providers/database/database';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { Toast } from '@ionic-native/toast';
-//import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
 @Component({
   selector: 'page-detailfilms',
   templateUrl: 'detailfilms.html',
@@ -98,7 +98,7 @@ column: string = 'tvname';
 }
 
 startVideo(url) {
- // this.launchInterstitial();
+  this.launchInterstitial();
   let options: StreamingVideoOptions = {
     successCallback: () => { console.log('Finished Video') },
     errorCallback: (e) => { console.log('Error: ', e) },
@@ -167,7 +167,7 @@ startVideo(url) {
               refresher.complete();
              }, 2000);
          }
-         /*
+         /**/
        launchInterstitial() {
          
           const interstitialConfig: AdMobFreeInterstitialConfig = {
@@ -187,5 +187,5 @@ startVideo(url) {
         
      
          }
-         */
+         
 }

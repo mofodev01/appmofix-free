@@ -12,9 +12,9 @@ import { SettingPage } from '../setting/setting'
 import { LoginPage } from '../login/login';
 
 
-//import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
-//import { AdMobFree,AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
-//import { AppRate } from '@ionic-native/app-rate';
+import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
+import { AdMobFree,AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+import { AppRate } from '@ionic-native/app-rate';
 import * as dl from 'cordova-plugin-android-downloadmanager';
 import {  
   File  
@@ -35,37 +35,37 @@ export class ProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public menuCtrl:MenuController,public storage: Storage, public appCtrl: App, public alertCtrl: AlertController,
     public http:  HttpClient,
-   // private inAppBrowser: InAppBrowser,
-    //private admobFree: AdMobFree,
+   private inAppBrowser: InAppBrowser,
+    private admobFree: AdMobFree,
      private file: File
-     //,private appRate: AppRate
+     ,private appRate: AppRate
 ) {this.menuCtrl.enable(true);
   this.index = "home";
-  //this.rateMe();
+  this.rateMe();
 }
-/*
+/**/
 rateMe() {
  
 this.appRate.preferences.storeAppURL = {
  // ios: '< my_app_id >',
-  android: 'market://details?id=com.iptvmedia.space',
+  android: 'market://details?id=com.appmofix.streaming',
  // windows: 'ms-windows-store://review/?ProductId=< Store_ID >'
   };
 
   this.appRate.promptForRating(true);
 }
-*/
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     //this.download_app();
   }
   gotolive() {
-    //this.launchInterstitial();
+    this.launchInterstitial();
     this.navCtrl.setRoot(LivePage);
   }
   gotovod() {
-    //this.launchInterstitial();
+    this.launchInterstitial();
     this.navCtrl.setRoot(FilmsPage);
   }
   scrollTo() {
@@ -121,7 +121,7 @@ download_app(){
 
 
 openWebpage(){
-  /*
+  /**/
  const options: InAppBrowserOptions = {
   zoom: 'yes',
   shouldPauseOnSuspend: 'yes',
@@ -130,7 +130,7 @@ openWebpage(){
 }
 
 this.inAppBrowser.create('http://appmofix.com/', '_system', options);
-*/
+
 }
 
 logout(){
@@ -199,14 +199,14 @@ this.http.get('http://space.appmofix.com/api/fetch_user.php?username='+this.data
 ///-----
 
     }
-/*
+/**/
     launchInterstitial() {
          
       const interstitialConfig: AdMobFreeInterstitialConfig = {
-              // isTesting: true,// Remove in production
+              isTesting: true,// Remove in production
               autoShow: true,
           //id: Your Ad Unit ID goes here
-            id:'ca-app-pub-3000905870244951/4658521773'
+            // id:'ca-app-pub-3000905870244951/4658521773'
       };
     
       this.admobFree.interstitial.config(interstitialConfig);
@@ -219,5 +219,5 @@ this.http.get('http://space.appmofix.com/api/fetch_user.php?username='+this.data
     
     
      }
-*/
+
 }

@@ -69,11 +69,11 @@ import { PrivacyTermsPage } from '../pages/privacy-terms/privacy-terms';
 import { RecoveryPasswordPage } from '../pages/recovery-password/recovery-password';
 
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
-//import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
-//import { AdMobFree } from '@ionic-native/admob-free';
-//import { AppRate } from '@ionic-native/app-rate';
+import { AdMobFree } from '@ionic-native/admob-free';
+import { AppRate } from '@ionic-native/app-rate';
 @NgModule({
   declarations: [
     MyApp,
@@ -170,14 +170,14 @@ ListeServerFilmsPage ,
     EmailComposer ,
     OneSignal,
     Network,
-    //InAppBrowser,
+    InAppBrowser,
   
     //Braintree, 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JsonDataProvider,
     DatabaseProvider
-  // , AdMobFree
-  // ,AppRate
+   , AdMobFree
+   ,AppRate
   ]
 })
 export class AppModule {}

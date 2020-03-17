@@ -10,40 +10,24 @@ import { Storage } from '@ionic/storage';
 import { LivePage } from '../pages/live/live';
 import { FavoratePage } from '../pages/favorate/favorate';
 import { FilmsPage } from '../pages/films/films';
-/*
-import { TvSeriesPage } from '../pages/tv-series/tv-series';
-import { KidMoviesPage } from '../pages/kid-movies/kid-movies';
 
-
-import { VodExYuPage } from '../pages/vod-ex-yu/vod-ex-yu';
-import { VodGamingPage } from '../pages/vod-gaming/vod-gaming'
-
-import { VipPage } from '../pages/vip/vip'
-*/
 import { ContactPage } from '../pages/contact/contact'
-//import { InfoPage } from '../pages/info/info'
+
 
 
 import { Market } from '@ionic-native/market';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
-//import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+
 
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 
-/*
-import { FreeLivePage } from '../pages/free-live/free-live'
-import { FreeFilmsPage } from '../pages/free-films/free-films'
-
-import { DownloadPage } from '../pages/download/download';
-import { AndroidAppPage } from '../pages/android-app/android-app'
-*/
 import { HttpClient/*,HttpHeaders*/  } from '@angular/common/http';
 import { PrivacyTermsPage } from '../pages/privacy-terms/privacy-terms'
 import { OneSignal } from '@ionic-native/onesignal';
 import { Network } from '@ionic-native/network';
-//import { AdMobFree, AdMobFreeBannerConfig/*, AdMobFreeInterstitialConfig*/ } from '@ionic-native/admob-free';
+import { AdMobFree, AdMobFreeBannerConfig/*, AdMobFreeInterstitialConfig*/ } from '@ionic-native/admob-free';
 @Component({
   templateUrl: 'app.html'
 })
@@ -72,14 +56,14 @@ export class MyApp {
     private socialSharing: SocialSharing,
     public actionsheetCtrl: ActionSheetController,
     public alertCtrl: AlertController ,
-    //private admobFree: AdMobFree,
+    private admobFree: AdMobFree,
     private storage: Storage,
     private locationAccuracy: LocationAccuracy) {
     this.initializeApp();
     this.showBanner();
     this.localisation();
     this.fetchuser();
-    //this.push_notification();
+    this.push_notification();
     this.network_space();
     // used for an example of ngFor and navigation   SeriesPage
     
@@ -130,14 +114,6 @@ export class MyApp {
     , { title: 'Live Tv', component: LivePage,icon : "desktop" }
     ,{ title: 'VOD Movies', component: FilmsPage,icon : "film" }
 
-    //,{ title: 'Kid Movies', component: KidMoviesPage,icon : "recording" }
-    //,{ title: 'Tv Series', component: TvSeriesPage,icon : "paper" }
-
-    //,{ title: 'Ex Yu', component: VodExYuPage,icon : "aperture" }
-    //,{ title: '3D Movies', component: VodGamingPage,icon : "game-controller-b" }
-   // ,{ title: 'Vip Channels', component: VipPage,icon : "ribbon" }
-   // ,{ title: 'Download', component: DownloadPage,icon : "download" }
-   // ,{ title: 'Tutorials',component: AndroidAppPage,icon : "book"}
     ,{ title: 'Support', component: ContactPage,icon : "mail" }
     ,{ title: 'Privacy & Terms', component: PrivacyTermsPage,icon : "md-lock" }
     ,{ title: 'Favourite', component: FavoratePage,icon : "bookmarks" }
@@ -277,11 +253,11 @@ this.socialSharing.share("","", "http://space.appmofix.com/image/space.png" ,"ht
 
    
       showBanner(){
-        /*
+        /**/
         const bannerConfig: AdMobFreeBannerConfig = {
-         // isTesting: true,// Remove in production
+          isTesting: true,// Remove in production
           autoShow: true,
-          id:'ca-app-pub-3000905870244951/5165239492'
+         // id:'ca-app-pub-3000905870244951/5165239492'
 
 
          };
@@ -293,7 +269,7 @@ this.socialSharing.share("","", "http://space.appmofix.com/image/space.png" ,"ht
            })
            .catch(e => console.log(e));
         
-      */
+      
       }  
      
 

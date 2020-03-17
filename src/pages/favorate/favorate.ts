@@ -6,7 +6,7 @@ import { JsonDataProvider } from '../../providers/json-data/json-data';
 
 
 import { DatabaseProvider } from '../../providers/database/database';
-//import { AdMobFree, AdMobFreeInterstitialConfig} from '@ionic-native/admob-free';
+import { AdMobFree, AdMobFreeInterstitialConfig} from '@ionic-native/admob-free';
 
 
 
@@ -38,7 +38,7 @@ export class FavoratePage {
     , public JsonDataProvider: JsonDataProvider,
     private database: DatabaseProvider, public loadingCtrl: LoadingController
     ,public menuCtrl:MenuController
-    //,private admobFree: AdMobFree
+    ,private admobFree: AdMobFree
     ) {
       this.menuCtrl.enable(true)
   }
@@ -104,7 +104,7 @@ Deletefavorate(id : any, index){
 }
 
 launchInterstitial() {
-   /*      
+   /* */     
   const interstitialConfig: AdMobFreeInterstitialConfig = {
           isTesting: true,// Remove in production
           autoShow: true,
@@ -119,7 +119,7 @@ launchInterstitial() {
       // success
       
   });
-*/
+
 
  }
 
