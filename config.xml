@@ -20,7 +20,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="70000" />
     <preference name="loadUrlTimeoutValue" value="60000" />
-    <preference name="YouTubeDataApiKey" value="AIzaSyCSllJn0jW7kf9zIpWyPbORJ1WQ3yBGzXM" />
+   
     <preference name="android-targetSdkVersion" value="28" />
     <platform name="android">
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
@@ -106,7 +106,7 @@
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-android-downloadmanager" spec="^0.5.0" />
-    <plugin name="cordova-plugin-youtube-video-player" spec="^2.3.0" />
+    
     <plugin name="cordova-clipboard" spec="^1.2.1" />
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-email-composer" spec="0.9.2">
@@ -115,7 +115,7 @@
     <plugin name="onesignal-cordova-plugin" spec="^2.4.7" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
     <plugin name="cordova-plugin-admob-free" spec="^0.27.0">
-        <variable name="ADMOB_APP_ID" value="ca-app-pub-3000905870244951~7875163316" />
+        <variable name="ADMOB_APP_ID" value="ca-app-pub-3000905870244951~3566771691" />
     </plugin>
     <plugin name="cordova-plugin-apprate" spec="^1.5.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.2.0" />

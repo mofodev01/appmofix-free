@@ -62,7 +62,7 @@ import {
 import {  
   File  
 } from '@ionic-native/file';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+
 import { Clipboard } from '@ionic-native/clipboard';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { PrivacyTermsPage } from '../pages/privacy-terms/privacy-terms';
@@ -165,7 +165,7 @@ ListeServerFilmsPage ,
     FileTransfer,  
     FileTransferObject,  
     File ,
-    YoutubeVideoPlayer ,
+    
     Clipboard ,
     EmailComposer ,
     OneSignal,

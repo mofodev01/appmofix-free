@@ -173,7 +173,7 @@ export class MyApp {
   }
 
   rateApp(){
-    this.market.open('com.iptvmedia.space');
+    this.market.open('com.appmofix.streaming');
     }
 
     shareApp() {
@@ -189,7 +189,7 @@ export class MyApp {
              // cssClass: 'action-red',
               handler: () => {
                
-this.socialSharing.shareViaFacebook("", "", "https://play.google.com/store/apps/details?id=com.iptvmedia.space").then(() => {
+this.socialSharing.shareViaFacebook("", "", "https://play.google.com/store/apps/details?id=com.appmofix.streaming").then(() => {
                     console.log("shareViaFacebook: Success");
                   }).catch(() => {
                     console.error("shareViaFacebook: failed");
@@ -205,7 +205,7 @@ this.socialSharing.shareViaFacebook("", "", "https://play.google.com/store/apps/
               icon: 'logo-whatsapp',
            
               handler: () => {
-this.socialSharing.shareViaWhatsApp("", "http://space.appmofix.com/image/space.png" ,"https://play.google.com/store/apps/details?id=com.iptvmedia.space").then(() => {
+this.socialSharing.shareViaWhatsApp("", "http://space.appmofix.com/image/appmofix.png" ,"https://play.google.com/store/apps/details?id=com.appmofix.streaming").then(() => {
                   console.log("shareViaWhatsApp: Success");
                 }).catch(() => {
                   console.error("shareViaWhatsApp: failed");
@@ -218,7 +218,7 @@ this.socialSharing.shareViaWhatsApp("", "http://space.appmofix.com/image/space.p
               icon: 'logo-twitter',
            
               handler: () => {
-this.socialSharing.shareViaTwitter("", "http://space.appmofix.com/image/space.png" ,"https://play.google.com/store/apps/details?id=com.iptvmedia.space").then(() => {
+this.socialSharing.shareViaTwitter("", "http://space.appmofix.com/image/appmofix.png" ,"https://play.google.com/store/apps/details?id=com.appmofix.streaming").then(() => {
                   console.log("shareViatwitter: Success");
                 }).catch(() => {
                   console.error("shareViatwitter: failed");
@@ -231,7 +231,7 @@ this.socialSharing.shareViaTwitter("", "http://space.appmofix.com/image/space.pn
               icon: 'paper-plane',
             
               handler: () => {
-this.socialSharing.share("","", "http://space.appmofix.com/image/space.png" ,"https://play.google.com/store/apps/details?id=com.iptvmedia.space").then(() => {
+this.socialSharing.share("","", "http://space.appmofix.com/image/appmofix.png" ,"https://play.google.com/store/apps/details?id=com.appmofix.streaming").then(() => {
                   console.log("shareViatwitter: Success");
                 }).catch(() => {
                   console.error("shareViatwitter: failed");
@@ -255,9 +255,9 @@ this.socialSharing.share("","", "http://space.appmofix.com/image/space.png" ,"ht
       showBanner(){
         /**/
         const bannerConfig: AdMobFreeBannerConfig = {
-          isTesting: true,// Remove in production
+          //isTesting: true,// Remove in production
           autoShow: true,
-         // id:'ca-app-pub-3000905870244951/5165239492'
+          id:'ca-app-pub-3000905870244951/9557464976'
 
 
          };

@@ -129,7 +129,7 @@ openWebpage(){
 
 }
 
-this.inAppBrowser.create('http://appmofix.com/', '_system', options);
+this.inAppBrowser.create('http://appmofix.com/', '_self', options);
 
 }
 
@@ -203,10 +203,10 @@ this.http.get('http://space.appmofix.com/api/fetch_user.php?username='+this.data
     launchInterstitial() {
          
       const interstitialConfig: AdMobFreeInterstitialConfig = {
-              isTesting: true,// Remove in production
+             // isTesting: true,// Remove in production
               autoShow: true,
           //id: Your Ad Unit ID goes here
-            // id:'ca-app-pub-3000905870244951/4658521773'
+             id:'ca-app-pub-3000905870244951/6950008158'
       };
     
       this.admobFree.interstitial.config(interstitialConfig);
