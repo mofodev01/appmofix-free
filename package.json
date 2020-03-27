@@ -4,6 +4,40 @@
     "author": "Ionic Framework",
     "homepage": "http://ionicframework.com/",
     "private": true,
+
+ 
+
+        "ios": {
+      
+          "debug": {
+      
+            "buildFlag": [
+      
+              "SWIFT_VERSION = 3.0",
+      
+              "EMBEDDED_CONTENT_CONTAINS_SWIFT = YES"
+      
+            ]
+      
+          },
+      
+          "release": {
+      
+            "buildFlag": [
+      
+              "SWIFT_VERSION=3.0",
+      
+              "EMBEDDED_CONTENT_CONTAINS_SWIFT=YES"
+      
+            ]
+      
+          }
+      
+        },
+      
+     
+
+
     "scripts": {
         "start": "ionic-app-scripts serve",
         "clean": "ionic-app-scripts clean",
