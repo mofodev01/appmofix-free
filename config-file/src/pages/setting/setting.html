@@ -1,0 +1,83 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Setting</ion-title>
+      <ion-buttons start >
+           <button ion-button icon only (click)="Register()">
+                <ion-icon name="checkmark"></ion-icon>
+           </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <form >
+
+
+
+
+        <ion-item  class="listcolor">
+            <ion-label floating>
+              Username
+            </ion-label>
+            <ion-input type="text" class="text-input" disabled="true" value="{{items_user}}"  name="fullname" #username></ion-input>
+       </ion-item>
+
+
+       <ion-item  class="listcolor">
+          <ion-label floating>
+              Email
+          </ion-label>
+          <ion-input type="email" class="text-input" disabled="true" value="{{items_email}}" name="email" #email></ion-input>
+     </ion-item>
+
+     <ion-item  class="listcolor">
+        <ion-label floating>
+            Mobile Number
+        </ion-label>
+        <ion-input type="number" class="text-input" value="{{items_telephone}}"  name="mobile" #mobile></ion-input>
+   </ion-item>
+
+   <ion-item  class="listcolor">
+    <ion-label floating>
+        MAC Address
+    </ion-label>
+    <ion-input type="text" class="text-input" value="{{mac_addr}}"   name="mac_add" #mac_add></ion-input>
+</ion-item>
+
+   <ion-item  class="listcolor">
+      <ion-label floating>
+          Password
+      </ion-label>
+      <ion-input type="password" class="text-input"  name="password" #password></ion-input>
+    </ion-item>
+
+
+      <ion-item  class="listcolor">   
+      <ion-label floating>
+         Confirm Password 
+      </ion-label>
+      <ion-input type="password" class="text-input"  name="confirm_password" #confirm_password></ion-input>
+ </ion-item>
+      
+        
+      
+         
+      
+        
+      
+       </form>
+       
+        
+  
+  </ion-content>
+  

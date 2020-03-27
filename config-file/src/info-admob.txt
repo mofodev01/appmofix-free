@@ -1,0 +1,7 @@
+appmofix
+Android
+ID de l'application : ca-app-pub-3000905870244951~3566771691
+appmofix-Bannière :
+ca-app-pub-3000905870244951/9557464976
+appmofix-Interstitiel :
+ca-app-pub-3000905870244951/6950008158

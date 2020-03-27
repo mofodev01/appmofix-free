@@ -1,0 +1,359 @@
+
+  <ion-header >
+
+    <ion-navbar >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  
+      <ion-title >
+          Home
+        </ion-title>
+        <!--
+        <ion-buttons end>
+          <button ion-button left icon-only (click)="refresh()">
+             <ion-icon  name="refresh" ></ion-icon> 
+          </button>
+        </ion-buttons>-->
+  
+              <ion-buttons end>
+                    <button ion-button left icon-only (click)="logout()">
+                       <ion-icon  name="log-out" ></ion-icon> 
+                    </button>
+             </ion-buttons>
+        
+    </ion-navbar>
+  
+	  
+    <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="index">
+
+      <ion-segment-button value="home" >
+          Status
+      </ion-segment-button>
+      <ion-segment-button value="whatisiptv">
+          What is IPTV?
+      </ion-segment-button>
+      <ion-segment-button value="whatisiptvspace">
+          App
+      </ion-segment-button>
+      
+</ion-segment>
+</ion-toolbar>
+  
+  </ion-header>
+
+
+
+  
+  
+  <ion-content >
+
+      
+    <div [ngSwitch]="index">
+  
+      <ion-list *ngSwitchCase="'home'">
+  
+  
+     <ion-card >
+      <ion-item class="card">
+       
+          <ion-col  >
+               <button ion-button block round color="primary" (click)="gotolive()">
+               Live TV FREE
+            </button>
+            </ion-col>
+            <ion-col  >
+                <button ion-button block round color="green-sea" (click)="gotovod()">
+                   VOD FREE
+                  </button>
+            </ion-col>
+       
+
+      </ion-item>
+    </ion-card>
+<!-------------------------------------------------------------------------------------------------->
+     <ion-card >
+    
+      <ion-item *ngFor="let item of items" class="card">
+        
+      <h3 class="card-header"><strong>Account information :</strong></h3>
+      
+      <ion-row class="text-card">
+        <ion-col >
+         Username   :
+        </ion-col>
+        <ion-col >
+      {{item.username}}
+        </ion-col> 
+        
+     
+    </ion-row>
+    <ion-row class="text-card">
+        <ion-col >
+          Telephone :
+        </ion-col>
+        <ion-col >
+      {{item.telephone}}
+        </ion-col>
+     
+    </ion-row>
+    <ion-row class="text-card">
+        <ion-col >
+          Email     :
+        </ion-col>
+        <ion-col class="text-card">
+      {{item.email}}
+        </ion-col>
+     
+    </ion-row>
+    <ion-row class="text-card">
+       
+        <ion-col>
+          <button ion-button icon-start clear small (click)="setting(item.username,item.telephone,item.email,item.mac_add)">
+            <ion-icon name="settings"></ion-icon>
+            <div>Setting</div>
+          </button>
+        </ion-col>
+    
+       
+        
+      </ion-row>
+      </ion-item>
+    
+      
+    
+    </ion-card>
+    <!-------------------------------------------------------------------------------------------------->
+
+     <ion-card class="card-down" (click)="download_app()">
+      <img src="assets/img/Essayez-premium.png"/>
+     
+    </ion-card>
+
+          <ion-card class="card-web-site" (click)="openWebpage()">
+              <img src="assets/img/site.png"/>
+              <ion-card-content>
+                <ion-card-title class="text-card">
+                    Notre nouveau site internet
+                  </ion-card-title>
+                <p class="text-card">
+                    Nous vous invitons à visiter notre site web,
+                    Vous trouverez une gamme d'applications qui répondra à vos souhaits.
+                  
+                </p>
+              </ion-card-content>
+            </ion-card>
+
+  
+         
+      </ion-list>
+  
+      
+  
+      <ion-list *ngSwitchCase="'whatisiptv'">
+  
+         <!------------------wath is iptv?---------------------------->
+         <!------------------wath is iptv?---------------------------->
+ <ion-card  class="card">
+    <ion-card-header class="card-header">
+        What is IPTV? 
+    </ion-card-header>
+    <ion-card-content class="text-card" >
+   
+        
+             <!----------------------<ion-item class="card" >------------------------>
+
+                     
+            <p class="text-card"> What is iptv – From a TV watcher’s point of view, IPTV
+                is very simple: instead of receiving TV programs as broadcast
+                signals that enter your home from a rooftop antenna, 
+                satellite dish, or fiber-optic cable, you get them streamed
+                (downloaded and played almost simultaneously) through your 
+                Internet connection. Unlike downloaded media, IPTV offers
+                the ability to stream the source media continuously. As a 
+                result, a client media player can begin playing the content 
+                (such as a TV channel) almost immediately. This is known 
+                as streaming media.
+                To understand how IPTV is different from traditional TV, 
+                let’s compare traditional mode of viewing TV with IPTV.
+        
+                Cable and satellite both function by enabling users
+                to adjust to specific channels within that signal 
+                and the fundamental difference is that cable is 
+                via a wired connection whereas satellite 
+                is wireless till it reaches your house.
+                IPTV uses Internet protocol (IP) based network
+                to deliver TV channels to users’ set-top box. 
+                Internet networks differ from cable and satellite
+                by offering content through the same client-server
+                model that renders email, websites, and other
+                Internet-based services. As we will see mentioned
+                further in this blog, IP or Internet Protocol is
+                the language that is used for transferring data
+                packets between computers attached to the internet
+                network.
+        
+               Unlike cable or satellite where content is 
+               broadcast in real time, on a transmit and forget
+               the model, IPTV has the ability to store the 
+               programming on servers at transmitting end, 
+               allowing users to request the content over 
+               the Internet at any time.</p>
+        
+        
+  <!-----------------</ion-item>----------------------------->
+                
+
+    </ion-card-content>
+</ion-card>
+  <!---------------------------------------------->
+  
+      <!------------------What are IPTV types?---------------------------->
+         <ion-card  class="card">
+        <ion-card-header class="card-header">
+            What are IPTV types? 
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+           
+                       
+                <p class="text-card"> 
+                    IPTV services may be classified into three main groups:
+
+                    Video on demand (VOD): you can select a TV program or movie
+                    you want to watch from a wide range, pay your money, and 
+                    watch it there and then.
+                    Live television and live media, with or without related
+                    interactivity.
+                    Time-shifted media: e.g. catch-up TV (replays a TV show
+                    that was broadcast hours or days ago), start-over TV 
+                    (replays the current TV show from its beginning)
+                
+                    All three forms of IPTV can work either using your
+                    computer and an ordinary web browser, through a set-top 
+                    box to show on your television screen, even on a mobile 
+                    device like a cell phone or an iPod…  All three can be 
+                    delivered either over the public Internet or through a 
+                    managed, private network that works in essentially the
+                    same way.
+                </p>
+            
+        </ion-card-content>
+    </ion-card>
+      <!---------------------------------------------->
+      <!------------------How does IPTV work?---------------------------->
+      <ion-card  class="card">
+        <ion-card-header class="card-header">
+            How does IPTV work?
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+                 
+                <p class="text-card">IPTV is much similar like browsing the internet than 
+                    traditional channel surfing. It merely uses IP 
+                    (Internet Protocol), a transport protocol which is a 
+                    delivery mechanism to deliver the videos to the viewer.
+                     When the viewer clicks on any TV program or requests 
+                     the video, video from different sources (servers) is
+                     divided into data packets and sent over the internet.
+                     Video servers transmit programs through fiber-optic 
+                     cableto existing household via internet connection
+                     and requests are sent out and shows are sent back.  </p>
+            
+            
+        </ion-card-content>
+    </ion-card>
+      <!---------------------------------------------->
+  
+      <!------------------How to use IPTV?---------------------------->
+         <ion-card  class="card">
+        <ion-card-header class="card-header">
+            How to use IPTV?
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+                <p class="text-card">At this time definitely, you are looking forward to 
+                    finding out more about how to use IPTV, which devices 
+                    are compatible.
+                    Firstly, you gotta have an internet connection, 
+                    good speed is highly recommended ( because some 
+                    FHD channels require a stable connection)
+                    Secondly. a device is surely needed, With Iptv Space
+                     you can use on almost devices: MAG box, Android box,
+                     Open box, PC, Smart TV, Apple TV, Enigma, Dreamlink,
+                     KODI till on iPhone, Ipad, Android apps…
+                
+                    Now starting to register an account cannot be easier,
+                     all you have to do is enter your email address and
+                     select your device type, then wait for an email
+                     with login information.
+                
+                    After having a trial account, you go to set up 
+                    your device and begin to enjoy !!!</p>
+               
+        </ion-card-content>
+    </ion-card>
+      <!---------------------------------------------->
+      
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'whatisiptvspace'">
+  
+         <!------------------What is IPTV SPACE? ---------------------------->
+     <ion-card  class="card">
+        <ion-card-header class="card-header">
+            What is IPTV SPACE? 
+        </ion-card-header>
+        <ion-card-content class="text-card" >
+       
+            
+                <h2 class="card-header"> Iptv Space offers an impressive </h2>
+                <h2 class="card-header"> collection of on-demand </h2>
+                <h2 class="card-header">movies, live action, and TV Shows</h2>
+           
+                  <h3 class="card-header">-Iptv Space STREAMING</h3>
+                  <p class="text-card">Excellent picture quality (Most videos are in HD). Also, 
+                    almost channels work without any lag/buffering.
+                    We update new content nearly daily.</p>
+                  
+                  <h3 class="card-header"> -VOD (Video on Demand)</h3>
+                  <p class="text-card"> We provide about 20 packages of VOD. Our VOD list was 
+                    sorted by the country like English Movie, , Indian Movie,
+                    Kid Movie, 3D Movie, etc.</p>
+                  
+                <h3 class="card-header"> -Compatible With All Devices</h3>
+                 <p class="text-card">  You can use any devices you want and find instruction 
+                    step by step for each device</p>
+                
+                  <p class="text-card"> Imagine that every day when you get back from work or school,
+                    you turn the TV on for a relaxing time and your favorite show 
+                    has been ended. You have to watch some boring TV programs 
+                    instead of a fascinating reality TV show. Wouldn’t it be
+                    better if watching TV were more like browsing the Web, so you 
+                    could pick the program you wanted to watch whenever and 
+                    wherever you felt like watching it? So Internet Protocol
+                    Television (IPTV) absolutely is the solution you are looking 
+                    for, IPTV uses Internet technology to deliver TV programs
+                    “on demand. And the question here is ” How does it work?
+                    What benefits will it bring us? Why you should use IPTV?
+                    Let’s take a closer look!</p>
+             
+                
+        </ion-card-content>
+    </ion-card>
+      <!---------------------------------------------->
+  
+      </ion-list>
+  
+    </div>
+  
+    <ion-fab right bottom>
+      <button (click)="scrollTo()" ion-fab color="primary"><ion-icon name="arrow-down"></ion-icon></button>
+    
+  </ion-fab>
+  
+  </ion-content>
+  
+

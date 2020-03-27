@@ -25,7 +25,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 import { HttpClient/*,HttpHeaders*/  } from '@angular/common/http';
 import { PrivacyTermsPage } from '../pages/privacy-terms/privacy-terms'
-import { OneSignal } from '@ionic-native/onesignal';
+
 import { Network } from '@ionic-native/network';
 import { AdMobFree, AdMobFreeBannerConfig/*, AdMobFreeInterstitialConfig*/ } from '@ionic-native/admob-free';
 @Component({
@@ -49,7 +49,7 @@ export class MyApp {
 
   pages: Array<{title: string , icon: string , component: any}>;
 
-  constructor(private network: Network,private oneSignal: OneSignal ,public http:  HttpClient ,  
+  constructor(private network: Network ,public http:  HttpClient ,  
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,private market: Market,
@@ -89,19 +89,6 @@ export class MyApp {
 
   push_notification(){
 
-    this.oneSignal.startInit('02637e80-539c-4982-876e-09f0cb8260bb', '111011916546');
-
-    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
-    
-    this.oneSignal.handleNotificationReceived().subscribe(() => {
-     // do something when notification is received
-    });
-    
-    this.oneSignal.handleNotificationOpened().subscribe(() => {
-      // do something when a notification is opened
-    });
-    
-    this.oneSignal.endInit();
 
   }
 

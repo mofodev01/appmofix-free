@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title >
+      favourites
+    </ion-title>
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <ion-grid >
+        <ion-row>
+          <ion-col class="showbox" col-3 col-md-4 col-xl-3 *ngFor="let item of ListUser ; let i = index">
+            
+              <img [src]="item.tvname" class="img" onerror="this.src='assets/imgs/icon.png'" >
+      
+             
+                              
+                <div class="middle">
+            
+                    <div> 
+                        <ion-icon 
+                        class="iconplay"   (click)="startVideo(item.tvmedia)" name="play">
+                       </ion-icon>
+                    </div>
+
+                    <div> 
+                        <ion-icon class="iconfav" (click)="Deletefavorate(item , i)"  name="close-circle"></ion-icon>
+                    </div>
+
+                </div>
+           
+                    <div class="container">   
+                        <p  style="font-weight:bold; text-align: center ; width:100%; font-size: 16px; color:rgb(0, 0, 0);">{{item.tvlogo}}</p>
+                    </div>     
+             
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+  
+    
+
+   
+</ion-content>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<ion-header no-border>
+  
+    
+</ion-header>
+
+<ion-content no-bounce padding>
+  <ion-row class="app-icon-container">
+    <ion-col text-center>
+      <!--
+      <ion-icon [@slideInUpWithDelay]="'in'" name="ionic" class="app-icon-zoom"></ion-icon>
+      <img [@slideInUpWithDelay]="'in'" src="../../assets/imgs/santa.png" />
+      <img [@slideInSanta]="santaState" src="../../assets/imgs/santa.gif" />
+      <img [@slideInSanta]="santaState" src="../../assets/imgs/santa.png" />
+       -->
+       <img src="assets/icon/appmofix-login.png" width="170px" style="display:inline-block" height="40px"/>
+      
+    </ion-col>
+  </ion-row>
+
+  <form >
+
+    
+    <ion-item  class="listcolor">
+      <ion-label floating>
+        Username or Email
+      </ion-label>
+      
+      <ion-input type="text" class="text-input" name="username" #username>
+      </ion-input>
+    </ion-item>
+
+
+
+    
+
+   
+
+    <ion-item  class="listcolor">
+      <ion-label floating>
+        Password
+      </ion-label>
+      <ion-input  type="password" class="text-input" name="password" #password></ion-input>
+    </ion-item>
+
+    <ion-item  class="listcolor" no-lines>
+      
+    <a (click)="mot_de_passe_oublie()">  <h3><strong class="text-input"> Forgot your password ?</strong></h3> </a> 
+     
+      </ion-item>
+
+   
+
+    <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block round color="green-sea" (click)="signIn()">      
+          Sign in
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+
+    
+    <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block round color="primary" (click)="signUp()">      
+          Sign up
+        </button>
+      </ion-col>
+    </ion-row>
+
+  
+
+</form>
+</ion-content>

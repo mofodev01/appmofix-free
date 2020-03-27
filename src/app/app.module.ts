@@ -53,7 +53,7 @@ import { Geolocation } from  '@ionic-native/geolocation';
 import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import { Device } from '@ionic-native/device';
-import { OneSignal } from '@ionic-native/onesignal';
+
 import { Network } from '@ionic-native/network';
 import {  
   FileTransfer,  
@@ -168,7 +168,7 @@ ListeServerFilmsPage ,
     
     Clipboard ,
     EmailComposer ,
-    OneSignal,
+   
     Network,
     InAppBrowser,
   

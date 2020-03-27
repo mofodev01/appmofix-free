@@ -1,0 +1,52 @@
+
+
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>support</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form >
+
+     
+
+     <ion-item  class="listcolor">
+        <ion-label floating>
+          subject
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="subjet" class="text-input" name="subject" ></ion-input>
+   </ion-item>
+
+   <ion-item  class="listcolor">
+      <ion-label floating>
+        message
+      </ion-label>
+      <!-- <ion-input type="text" class="text-input" name="message" #message></ion-input>-->
+
+  <ion-textarea type="text" [(ngModel)]="body" class="text-input" name="body" style="height: 150px"></ion-textarea>
+
+      
+
+ </ion-item>
+
+ 
+
+
+  <ion-row class="sign-in-button-container">
+      <ion-col text-center>
+        <button ion-button block round color="green-sea" (click)="send_email()">      
+          <ion-icon name="mail"></ion-icon> Send Message
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+  </ion-content>
+
+
