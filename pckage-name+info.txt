@@ -49,4 +49,4 @@
   "cordova-plugin-screen-orientation": "^3.0.2",
   "cordova-plugin-screen-orientation": {},
 
-
+ca-app-pub-3000905870244951~3566771691
